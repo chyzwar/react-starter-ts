@@ -18,7 +18,11 @@ module.exports = {
     /**
      * Application main entry point
      */
-    main: './src/main.js',
+    main: './src/main.tsx',
+  },
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM"
   },
   output: {
     /**
@@ -61,7 +65,7 @@ module.exports = {
     *
     * @see: https://webpack.js.org/configuration/resolve/#resolve-extensions
     */
-    extensions: ['.ts', '.tsx'],
+    extensions: ['.ts', '.tsx', '.js'],
   },
   /**
    * DevServer Configuration
@@ -70,6 +74,7 @@ module.exports = {
    */
   devServer: {
     publicPath: '/',
+    contentBase: path.resolve("build"),
     historyApiFallback: true,
     compress: true,
     port: 4000,

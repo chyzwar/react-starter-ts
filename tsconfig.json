@@ -5,7 +5,7 @@
     "target": "es2015",
     "lib": ["es2017"],
     "rootDir": "src",
-    "outDir": "lib",
+    "outDir": "build",
     "newLine": "lf",
     "jsx": "React",
 
@@ -20,8 +20,9 @@
 
     "removeComments": true,
     "preserveConstEnums": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "pretty": true,
+    "allowJs": true,
     "declaration": true,
     "listEmittedFiles": true
   }

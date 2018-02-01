@@ -37,7 +37,7 @@
     "url-loader": "*",
     "file-loader": "*",
     "webpack": "3.x.x",
-    "webpack-dev-server": "2.x.x",
+    "webpack-dev-server": "*",
     "html-webpack-plugin": "2.x.x",
 
     "jest": "22.x.x",
