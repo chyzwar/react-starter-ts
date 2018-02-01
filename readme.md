@@ -5,9 +5,9 @@ What included:
 -------------
 - React
 - Redux
+- Redux DevTool Integration
 - React-Router
 - React-Router-Redux
 - Hot Module Replacement
-- DevTool Integration
-- Flow Type Configuration
-- Theming
+- TypeScript
+- Material Theming

@@ -1,22 +1,67 @@
 const path = require('path');
 const webpack = require('webpack');
-const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const commonConfig = require('./webpack.common');
 
-/**
- * Merge common config with development specific
- *
- * @see
- */
-module.exports = webpackMerge(commonConfig, {
+module.exports = {
   devtool: 'inline-source-map',
   cache: true,
   /**
-   * Add aditional entry for hot reload and container
+   * Application Entry points the application.
+   *
+   * @see https://webpack.js.org/configuration/entry-context/#entry
    */
   entry: {
+    /**
+     * Additional react hot reload
+     */
     reactHotLoaderPath: 'react-hot-loader/patch',
+    /**
+     * Application main entry point
+     */
+    main: './src/main.js',
+  },
+  output: {
+    /**
+     * The publicPath specifies the public URL address of the output files when referenced
+     *
+     * @see  https://webpack.js.org/guides/public-path/
+     */
+    publicPath: '/',
+    /**
+     * The output directory as absolute path (required).
+     *
+     * @see: https://webpack.js.org/configuration/output/#output-path
+     */
+    path: path.resolve('build'),
+    /**
+     * Specifies the name of each output file on disk.
+     *
+     * @see: https://webpack.js.org/configuration/output/#output-filename
+     */
+    filename: '[name].[hash].js',
+    /**
+     * Configure how source maps are named
+     *
+     * @see: https://webpack.js.org/configuration/output/#output-sourcemapfilename
+     */
+    sourceMapFilename: '[name].[hash].map',
+  },
+  resolve: {
+    /**
+     * Roots for module resolution
+     *
+     * @see: https://webpack.js.org/configuration/resolve/#resolve-modules
+     */
+    modules: [
+      path.resolve('node_modules'),
+      path.resolve('src'),
+    ],
+    /**
+    * An array of extensions that should be used to resolve modules.
+    *
+    * @see: https://webpack.js.org/configuration/resolve/#resolve-extensions
+    */
+    extensions: ['.ts', '.tsx'],
   },
   /**
    * DevServer Configuration
@@ -24,7 +69,6 @@ module.exports = webpackMerge(commonConfig, {
    * @see https://webpack.js.org/configuration/dev-server/#devserver
    */
   devServer: {
-    contentBase: path.resolve('build'),
     publicPath: '/',
     historyApiFallback: true,
     compress: true,
@@ -32,6 +76,57 @@ module.exports = webpackMerge(commonConfig, {
     hot: true,
     inline: true,
     overlay: true,
+  },
+  target: 'web',
+  module: {
+    loaders: [
+      {
+        test: /(\.tsx|\.ts)$/,
+        exclude: /node_modules/,
+        use: [
+          'ts-loader',
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.eot$/,
+        loader: 'url-loader',
+        query: {
+          limit: 65000,
+          name: '[name].[hash].[ext]',
+          minetype: 'application/vnd.ms-fontobject',
+        },
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 65000,
+          name: '[name].[hash].[ext]',
+          mimetype: 'application/font-woff',
+        },
+      },
+      {
+        test: /\.ttf$/,
+        loader: 'url-loader',
+        query: {
+          limit: 65000,
+          name: '[name].[hash].[ext]',
+          minetype: 'application/x-font-ttf',
+        },
+      },
+      {
+        test: /\.svg$/,
+        loader: 'url-loader',
+        query: { limit: 10000, minetype: 'image/svg+xml' },
+      },
+    ],
   },
   plugins: [
     /**
@@ -73,4 +168,4 @@ module.exports = webpackMerge(commonConfig, {
       },
     }),
   ],
-});
+};

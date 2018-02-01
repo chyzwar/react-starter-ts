@@ -1,0 +1,28 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es2015",
+    "lib": ["es2017"],
+    "rootDir": "src",
+    "outDir": "lib",
+    "newLine": "lf",
+    "jsx": "React",
+
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "pretty": true,
+    "declaration": true,
+    "listEmittedFiles": true
+  }
+}
