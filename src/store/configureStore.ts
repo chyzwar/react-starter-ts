@@ -1,12 +1,11 @@
 
-
 function configureStore(initState: ?Object) {
   switch (process.env.NODE_ENV) {
-    case 'production':
-      return require('./configureStore.prod').default(initState);
+    case "production":
+      return require("./configureStore.prod").default(initState);
 
-    case 'development':
-      return require('./configureStore.dev').default(initState);
+    case "development":
+      return require("./configureStore.dev").default(initState);
 
     default:
       throw new Error(`Unknown webpack mode: ${process.env.NODE_ENV}`);

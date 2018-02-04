@@ -3,11 +3,11 @@
   "compilerOptions": {
     "module": "es2015",
     "target": "es2015",
-    "lib": ["es2017"],
-    "rootDir": "src",
+    "lib": ["es2016", "es2017"],
     "outDir": "build",
     "newLine": "lf",
     "jsx": "React",
+    "baseUrl": "./src",
 
     "alwaysStrict": true,
     "strictNullChecks": true,

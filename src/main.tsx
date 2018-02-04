@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Root from "./containers/Root";
+import Root from "./containers/Root/Root";
 import configureStore from "./store/configureStore";
-import history from "./constants/History";
+import history from "constants/History";
 
 /**
  * Create an redux store
@@ -11,6 +11,9 @@ import history from "./constants/History";
  * @type {Store}
  */
 const store = configureStore();
+
+
+
 
 const render = (Component: Component) => {
   ReactDOM.render(

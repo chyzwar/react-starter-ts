@@ -28,6 +28,15 @@
   "license": "MIT",
   "repository": "https://github.com/chyzwar/react-starter",
   "devDependencies": {
+    "@types/jest": "22.x.x",
+    "@types/history": "4.x.x",
+    "@types/node": "8.x.x",
+    "@types/react": "16.x.x",
+    "@types/react-dom": "16.x.x",
+    "@types/react-redux": "5.x.x",
+    "@types/react-router": "4.x.x",
+    "@types/webpack": "3.x.x",
+
     "typescript": "2.7.x",
     "tslint": "5.x.x",
 
@@ -41,25 +50,26 @@
     "html-webpack-plugin": "2.x.x",
 
     "jest": "22.x.x",
-    "babel-jest": "*",
+    "ts-jest": "22.x.x",
     "enzyme": "3.x.x",
     "enzyme-adapter-react-16": "1.x.x"
   },
   "dependencies": {
     "axios": "*",
     "material-ui": "next",
+    "material-ui-icons": "*",
     "connected-react-router": "4.x.x",
     "history": "4.x.x",
     "react": "16.x.x",
     "react-dom": "16.x.x",
-    "react-hot-loader": "*",
-    "react-jss": "7.x.x",
+    "react-hot-loader": "next",
     "react-redux": "5.x.x",
     "react-router": "4.x.x",
     "react-router-redux": "next",
     "react-router-dom": "*",
     "redux": "3.x.x",
     "redux-devtools-extension": "2.x.x",
-    "redux-logger": "3.x.x"
+    "redux-logger": "3.x.x",
+    "redux-thunk": "2.x.x"
   }
 }

@@ -1,4 +1,4 @@
-import { CHANGE_THEME } from '../constants/ActionTypes';
+import { CHANGE_THEME } from "../constants/ActionTypes";
 
 export function changeTheme(name: string) {
   return {

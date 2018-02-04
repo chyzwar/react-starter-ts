@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
-import injectSheet from 'react-jss';
-import { connect } from 'react-redux';
-import { addTodo } from 'actions/TodoActions';
-import Header from 'components/Header/Header';
+import injectSheet from "react-jss";
+import { connect } from "react-redux";
+import { addTodo } from "actions/TodoActions";
+import Header from "components/Header/Header";
 
 const styles = ({ palette }) => ({
   page: {
@@ -14,7 +13,7 @@ const styles = ({ palette }) => ({
     background: palette.primary[50],
   },
   label: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 
@@ -23,7 +22,7 @@ class Create extends React.Component {
     super(props);
 
     this.state = {
-      input: '',
+      input: "",
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -43,7 +42,7 @@ class Create extends React.Component {
 
     this.props.addTodo(this.state.input);
     this.setState({
-      input: '',
+      input: "",
     });
   }
 
@@ -70,13 +69,6 @@ class Create extends React.Component {
     );
   }
 }
-
-Create.propTypes = {
-  addTodo: PropTypes.func.isRequired,
-  classes: PropTypes.shape({
-    button: PropTypes.string,
-  }).isRequired,
-};
 
 const mapDispatchToProps = dispatch => ({
   addTodo: (text) => {

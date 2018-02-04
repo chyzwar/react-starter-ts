@@ -1,13 +1,15 @@
-import React from 'react';
-import { Route } from 'react-router';
+import React from "react";
+import { Route } from "react-router";
+import { Switch } from "react-router";
 
-import Viewer from './Viewer/Viewer';
-import Create from './Create/Create';
-import History from './History/History';
-import Manage from './Manage/Manage';
+
+import Viewer from "./Viewer/Viewer";
+import Create from "./Create/Create";
+import History from "./History/History";
+import Manage from "./Manage/Manage";
 
 const Routes = () => (
-  <div>
+  <Switch>
     <Route
       path="/"
       exact
@@ -28,7 +30,7 @@ const Routes = () => (
       path="/manage"
       component={Manage}
     />
-  </div>
+  </Switch>
 );
 
 export default Routes;

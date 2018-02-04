@@ -109,7 +109,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(woff|woff2)$/,
+        test: /\.woff2$/,
         loader: 'url-loader',
         query: {
           limit: 65000,
