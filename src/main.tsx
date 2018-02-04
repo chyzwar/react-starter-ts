@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import Root from './containers/Root';
-import configureStore from './store/configureStore';
-import history from './constants/History';
+import Root from "./containers/Root";
+import configureStore from "./store/configureStore";
+import history from "./constants/History";
 
 /**
  * Create an redux store
@@ -18,7 +18,7 @@ const render = (Component: Component) => {
       store={store}
       history={history}
     />,
-    document.getElementById('root'),
+    document.getElementById("root"),
   );
 };
 
@@ -26,9 +26,9 @@ render(Root);
 
 if (module.hot) {
   module.hot.accept(
-    './containers/Root',
+    "./containers/Root",
     () => {
-      const { default: Component } = require('./containers/Root');
+      const { default: Component } = require("./containers/Root");
       render(Component);
     },
   );
