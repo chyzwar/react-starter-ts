@@ -11,6 +11,7 @@
     "no-any": false,
     "no-bitwise": false,
     "no-magic-numbers": false,
+    "variable-name": [true, "ban-keywords"],
     "ban-types": {
       "options": [
         ["Number", "Avoid using the `Number` type. Did you mean `number`?"],

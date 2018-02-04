@@ -1,31 +1,31 @@
-import applyMiddleware from 'redux/lib/applyMiddleware';
-import combineReducers from 'redux/lib/combineReducers';
-import createStore from 'redux/lib/createStore';
-
-import { connectRouter } from 'connected-react-router';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { routerReducer } from 'react-router-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import history from 'constants/History';
-import routerMiddleware from 'middleware/routerMiddleware';
-import loggerMiddleware from 'middleware/loggerMiddleware';
-import todosReducer from 'reducers/todosReducer';
-import themeReducer from 'reducers/themeReducer';
+import routerMiddleware from '../middleware/routerMiddleware';
+import loggerMiddleware from '../middleware/loggerMiddleware';
+import todosReducer from '../reducers/todosReducer';
+import themeReducer from '../reducers/themeReducer';
+
+import { RootAction } from '../actions/RootAction';
+import { RootState } from '../reducers/RootState';
 
 const middlewares = applyMiddleware(
   routerMiddleware,
   loggerMiddleware,
 );
 
-const reducers = combineReducers({
+const rootReducer = combineReducers<RootState, RootAction>({
   todos: todosReducer,
   theme: themeReducer,
+  router: routerReducer,
 });
 
 const enhancers = composeWithDevTools(middlewares);
 
-function configureStore(initialState: Object = {}) {
+function configureStore(initialState: Object = {}){
   return createStore(
-    connectRouter(history)(reducers),
+    rootReducer,
     initialState,
     enhancers,
   );
@@ -33,3 +33,4 @@ function configureStore(initialState: Object = {}) {
 
 
 export default configureStore;
+// https://github.com/piotrwitek/react-redux-typescript-guide#store-configuration

@@ -85,14 +85,6 @@ module.exports = webpackMerge(commonConfig, {
         negate_iife: false,
       },
     }),
-    /**
-     * Plugin FlowWebpackLoader
-     *
-     * @see https://github.com/happylynx/flow-webpack-plugin
-     */
-    new FlowWebpackPlugin({
-      failOnError: true,
-    }),
     /*
      * All modules from common entry will be extracted, also
      * If module is shared by 2 childrens it will get extracted to commons.

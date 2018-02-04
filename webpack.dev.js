@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
 module.exports = {
   devtool: 'inline-source-map',
   cache: true,
@@ -20,10 +21,6 @@ module.exports = {
      */
     main: './src/main.tsx',
   },
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
-  },
   output: {
     /**
      * The publicPath specifies the public URL address of the output files when referenced
@@ -36,7 +33,7 @@ module.exports = {
      *
      * @see: https://webpack.js.org/configuration/output/#output-path
      */
-    path: path.resolve('build'),
+    path: path.resolve('dist'),
     /**
      * Specifies the name of each output file on disk.
      *
@@ -58,7 +55,6 @@ module.exports = {
      */
     modules: [
       path.resolve('node_modules'),
-      path.resolve('src'),
     ],
     /**
     * An array of extensions that should be used to resolve modules.
@@ -73,11 +69,10 @@ module.exports = {
    * @see https://webpack.js.org/configuration/dev-server/#devserver
    */
   devServer: {
-    publicPath: '/',
-    contentBase: path.resolve("build"),
+    contentBase: "./dist",
     historyApiFallback: true,
     compress: true,
-    port: 4000,
+    port: 8080,
     hot: true,
     inline: true,
     overlay: true,

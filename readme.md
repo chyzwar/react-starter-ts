@@ -11,3 +11,5 @@ What included:
 - Hot Module Replacement
 - TypeScript
 - Material Theming
+
+https://www.typescriptlang.org/docs/handbook/enums.html
