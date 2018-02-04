@@ -3,7 +3,7 @@ import TealTheme from 'constants/TealTheme';
 
 import { CHANGE_THEME } from 'constants/ActionTypes';
 
-function themeReducer(state = BlueTheme, action) {
+function themeReducer(state = BlueTheme, action: RootAction) {
   switch (action.type) {
     case CHANGE_THEME:
       if (action.name === 'teal') return TealTheme;

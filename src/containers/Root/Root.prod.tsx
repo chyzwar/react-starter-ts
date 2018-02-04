@@ -1,20 +1,19 @@
 import React from "react";
 
 import { Provider } from "react-redux";
-import { ConnectedRouter } from "connected-react-router";
+import { ConnectedRouter } from 'react-router-redux'
 
+import ThemeProvider from "../ThemeProvider/ThemeProvider";
 import Routes from "../Routes/Routes";
-
-interface RootProps{
-  store: Object,
-  history: History
-}
+import RootProps from "./RootProps";
 
 const Root: React.StatelessComponent<RootProps> = ({ store, history }) => (
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Routes />
-    </ConnectedRouter>
+    <ThemeProvider>
+      <ConnectedRouter history={history}>
+        <Routes />
+      </ConnectedRouter>
+    </ThemeProvider>
   </Provider>
 );
 

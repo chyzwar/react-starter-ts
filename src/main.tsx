@@ -41,4 +41,6 @@ async function bootstrap(): Promise<void> {
 /**
  * Start an application
  */
-bootstrap();
+bootstrap()
+  .then(() => console.log("Application Started"))
+  .catch((error) => console.log(`Application error: ${error}`));
