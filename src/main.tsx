@@ -6,17 +6,13 @@ import history from "./constants/History";
 
 async function bootstrap(): Promise<void> {
   console.time("Application started in");
-
-  let 
-    Root: React.StatelessComponent, 
-    configureStore: Function;
-
+  
   switch (process.env.NODE_ENV) {
     case "development":
-      Root = await import(
+      var { default: Root } = await import(
         /* webpackChunkName: "Root" */ "./containers/Root/Root.dev",
       );
-      configureStore = await import(
+      var { default: configureStore } = await import(
         /* webpackChunkName: "configureStore" */ "./store/configureStore.dev",
       );
 
@@ -26,10 +22,10 @@ async function bootstrap(): Promise<void> {
        );
       break;
     case "production":
-      const { default: Root } = await import(
+      var { default: Root } = await import(
         /* webpackChunkName: "Root" */ "./containers/Root/Root.prod",
       );
-      configureStore = await import(
+      var { default: configureStore } = await import(
         /* webpackChunkName: "configureStore" */ "./store/configureStore.prod",
       );
 
