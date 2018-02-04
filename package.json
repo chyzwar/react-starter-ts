@@ -59,7 +59,6 @@
     "axios": "*",
     "material-ui": "next",
     "material-ui-icons": "*",
-    "connected-react-router": "4.x.x",
     "history": "4.x.x",
     "react": "16.x.x",
     "react-dom": "16.x.x",

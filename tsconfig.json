@@ -11,7 +11,7 @@
     ],
     "outDir": "build",
     "newLine": "lf",
-    "jsx": "React",
+    "jsx": "react",
 
     "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,
