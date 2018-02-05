@@ -1,4 +1,11 @@
-import { ADD_TODO, DELETE_TODO, EDIT_TODO, MARK_TODO, CLEAR_MARKED } from '../constants/ActionTypes';
+import { 
+  ADD_TODO, 
+  DELETE_TODO, 
+  EDIT_TODO, 
+  MARK_TODO, 
+  CLEAR_MARKED 
+} from '../constants/ActionTypes';
+
 
 export interface Todo{
   id: number;

@@ -7,14 +7,15 @@ import routerMiddleware from "../middleware/routerMiddleware";
 import themeReducer from "../reducers/themeReducer";
 import todosReducer from "../reducers/todosReducer";
 
-import { RootState } from "../reducers/RootState";
+import State from "types/State";
+import Action from "types/Action";
 
 const middlewares = applyMiddleware(
   routerMiddleware,
   loggerMiddleware,
 );
 
-const rootReducer = combineReducers<RootState, RootAction>({
+const rootReducer = combineReducers<State, Action>({
   todos: todosReducer,
   theme: themeReducer,
   router: routerReducer,
@@ -22,7 +23,7 @@ const rootReducer = combineReducers<RootState, RootAction>({
 
 const enhancers = composeWithDevTools(middlewares);
 
-function configureStore(initialState: Object = {}){
+function configureStore(initialState: Partial<State>) {
   return createStore(
     rootReducer,
     initialState,

@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es2015",
@@ -12,9 +13,9 @@
     "outDir": "build",
     "newLine": "lf",
     "jsx": "react",
-    "include": [
-      "src/types/*"
-    ],
+    "paths": {
+      "types/*": ["src/types/*"]
+    },
 
     "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,

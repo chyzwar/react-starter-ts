@@ -1,5 +1,5 @@
 import { routerReducer } from "react-router-redux";
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore, compose } from "redux";
 
 import loggerMiddleware from "../middleware/loggerMiddleware";
 import routerMiddleware from "../middleware/routerMiddleware";
@@ -11,7 +11,7 @@ const middlewares = applyMiddleware(
   loggerMiddleware,
 );
 
-const rootReducer = combineReducers<RootState, RootAction>({
+const rootReducer = combineReducers<State, Action>({
   router: routerReducer,
   theme: themeReducer,
   todos: todosReducer,
@@ -19,7 +19,7 @@ const rootReducer = combineReducers<RootState, RootAction>({
 
 const enhancers = compose(middlewares);
 
-function configureStore(initialState: Object = {}) {
+function configureStore(initialState: Partial<State>) {
   return createStore(
     rootReducer,
     initialState,
