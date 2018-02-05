@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev",
     "start:prod": "webpack-dev-server --config webpack.prod",
-
+    
     "build": "webpack --config webpack.prod",
     "build:watch": "webpack --config webpack.prod --watch",
 
@@ -37,7 +37,7 @@
     "@types/react-router-redux": "5.x.x",
     "@types/react-router": "4.x.x",
     "@types/webpack": "3.x.x",
-  
+
     "typescript": "2.7.x",
     "tslint": "5.x.x",
 

@@ -1,8 +1,16 @@
 import { ADD_TODO, DELETE_TODO, EDIT_TODO, MARK_TODO, CLEAR_MARKED } from '../constants/ActionTypes';
 
-const initialState = [];
+export interface Todo{
+  id: number;
+  mamrked: boolean;
+  text: string;
+}
 
-export default function todos(state = initialState, action) {
+export type TodosState = Todo[];
+
+const initialState: TodosState = [];
+
+export default function todos(state = initialState, action: RootAction) {
   switch (action.type) {
     case ADD_TODO:
       return [{

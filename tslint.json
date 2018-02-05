@@ -5,6 +5,7 @@
   ],
   "rules": {
     "one-line": false,
+    "interface-name": false,
     "only-arrow-functions": false,
     "no-redundant-jsdoc": false,
     "no-default-export": false,

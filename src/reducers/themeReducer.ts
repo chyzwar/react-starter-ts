@@ -1,5 +1,5 @@
-import BlueTheme from 'constants/BlueTheme';
-import TealTheme from 'constants/TealTheme';
+import BlueTheme from '../constants/BlueTheme';
+import TealTheme from '../constants/TealTheme';
 
 import { CHANGE_THEME } from 'constants/ActionTypes';
 

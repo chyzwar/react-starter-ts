@@ -1,27 +1,27 @@
-import { applyMiddleware, combineReducers, createStore, compose } from 'redux';
-import { connectRouter } from 'connected-react-router';
+import { routerReducer } from "react-router-redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 
-import history from '../constants/History';
-import routerMiddleware from '../middleware/routerMiddleware';
-import loggerMiddleware from '../middleware/loggerMiddleware';
-import todosReducer from '../reducers/todosReducer';
-import themeReducer from '../reducers/themeReducer';
+import loggerMiddleware from "../middleware/loggerMiddleware";
+import routerMiddleware from "../middleware/routerMiddleware";
+import themeReducer from "../reducers/themeReducer";
+import todosReducer from "../reducers/todosReducer";
 
 const middlewares = applyMiddleware(
   routerMiddleware,
   loggerMiddleware,
 );
 
-const reducers = combineReducers({
-  todos: todosReducer,
+const rootReducer = combineReducers<RootState, RootAction>({
+  router: routerReducer,
   theme: themeReducer,
+  todos: todosReducer,
 });
 
 const enhancers = compose(middlewares);
 
 function configureStore(initialState: Object = {}) {
   return createStore(
-    connectRouter(history)(reducers),
+    rootReducer,
     initialState,
     enhancers,
   );

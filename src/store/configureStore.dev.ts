@@ -1,14 +1,13 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { routerReducer } from "react-router-redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-import routerMiddleware from '../middleware/routerMiddleware';
-import loggerMiddleware from '../middleware/loggerMiddleware';
-import todosReducer from '../reducers/todosReducer';
-import themeReducer from '../reducers/themeReducer';
+import loggerMiddleware from "../middleware/loggerMiddleware";
+import routerMiddleware from "../middleware/routerMiddleware";
+import themeReducer from "../reducers/themeReducer";
+import todosReducer from "../reducers/todosReducer";
 
-import { RootAction } from '../actions/RootAction';
-import { RootState } from '../reducers/RootState';
+import { RootState } from "../reducers/RootState";
 
 const middlewares = applyMiddleware(
   routerMiddleware,
@@ -31,6 +30,4 @@ function configureStore(initialState: Object = {}){
   );
 }
 
-
 export default configureStore;
-// https://github.com/piotrwitek/react-redux-typescript-guide#store-configuration
