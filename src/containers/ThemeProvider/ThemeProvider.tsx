@@ -1,16 +1,15 @@
-import React from 'react';
+import React from "react";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
-import { connect } from 'react-redux';
-import { ThemeProvider } from 'react-jss';
+import { MuiThemeProviderProps } from "material-ui/styles/MuiThemeProvider";
+import { connect } from "react-redux";
 
-const ThemeProvider = ({ theme, children }) => (
-  <ThemeProvider theme={theme}>
+const ThemeProvider: React.StatelessComponent = ({ theme, children }: MuiThemeProviderProps) => (
+  <MuiThemeProvider theme={theme}>
     {children}
-  </ThemeProvider>
+  </MuiThemeProvider>
 );
-
 
 const mapStateToProps = ({ theme }) => ({ theme });
 
 export default connect(mapStateToProps)(ThemeProvider);
-

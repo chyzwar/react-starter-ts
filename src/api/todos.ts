@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const TODOS_API = '/todos';
+const TODOS_API = "/todos";
 
 export const read = (): Promise<Todo[]> => axios.get(
   TODOS_API

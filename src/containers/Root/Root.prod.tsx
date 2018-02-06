@@ -1,8 +1,8 @@
 import React from "react";
-import Reboot from 'material-ui/Reboot';
+import Reboot from "material-ui/Reboot";
 
 import { Provider } from "react-redux";
-import { ConnectedRouter } from 'react-router-redux'
+import { ConnectedRouter } from "react-router-redux"
 
 import ThemeProvider from "../ThemeProvider/ThemeProvider";
 import Routes from "../Routes/Routes";

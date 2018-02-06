@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { connect } from 'react-redux';
-import { changeTheme } from 'actions/ThemeActions';
+import { connect } from "react-redux";
+import { changeTheme } from "actions/ThemeActions";
 
 
 const ThemeSwitch = props => (
   <div>
-    <button onClick={props.changeTheme('blue')}> Blue </button>
-    <button onClick={props.changeTheme('teal')}> Teal </button>
+    <button onClick={props.changeTheme("blue")}> Blue </button>
+    <button onClick={props.changeTheme("teal")}> Teal </button>
   </div>
 );
 

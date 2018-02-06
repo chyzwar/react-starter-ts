@@ -1,4 +1,4 @@
-import createBrowserHistory from 'history/createBrowserHistory';
+import createBrowserHistory from "history/createBrowserHistory";
 
 /**
  * Create browser history IE => 11
@@ -7,7 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
  * @type {History}
  */
 const browserHistory = createBrowserHistory({
-  basename: '',
+  basename: "",
   forceRefresh: false,
   keyLength: 6,
 });

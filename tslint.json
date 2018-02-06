@@ -5,6 +5,10 @@
   ],
   "rules": {
     "one-line": false,
+    "member-ordering": false,
+    "ordered-imports": false,
+    "no-submodule-imports": false,
+    "no-duplicate-imports": false,
     "interface-name": false,
     "only-arrow-functions": false,
     "no-redundant-jsdoc": false,

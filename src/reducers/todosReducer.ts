@@ -4,7 +4,7 @@ import {
   EDIT_TODO, 
   MARK_TODO, 
   CLEAR_MARKED 
-} from '../constants/ActionTypes';
+} from "../constants/ActionTypes";
 
 
 export interface Todo{

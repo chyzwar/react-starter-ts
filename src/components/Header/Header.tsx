@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import injectSheet from 'react-jss';
-import { Link } from 'react-router-dom';
-import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
+import React from "react";
+import PropTypes from "prop-types";
+import injectSheet from "react-jss";
+import { Link } from "react-router-dom";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 const styles = ({ palette }) => ({
   nav: {
     background: palette.primary[500],
-    display: 'flex',
-    height: '30px',
+    display: "flex",
+    height: "30px",
   },
   link: {
-    margin: '5px',
+    margin: "5px",
   },
 });
 
