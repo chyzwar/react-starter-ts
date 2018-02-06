@@ -1,4 +1,5 @@
 import React from "react";
+import Reboot from 'material-ui/Reboot';
 
 import { Provider } from "react-redux";
 import { ConnectedRouter } from 'react-router-redux'
@@ -10,6 +11,7 @@ import RootProps from "./RootProps";
 const Root: React.StatelessComponent<RootProps> = ({ store, history }) => (
   <Provider store={store}>
     <ThemeProvider>
+      <Reboot />
       <ConnectedRouter history={history}>
         <Routes />
       </ConnectedRouter>

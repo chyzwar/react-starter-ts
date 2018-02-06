@@ -1,11 +1,13 @@
 import BlueTheme from '../constants/BlueTheme';
 import TealTheme from '../constants/TealTheme';
 
-import { CHANGE_THEME } from 'constants/ActionTypes';
+import ActionTypes from '../constants/ActionTypes';
+import { Action } from "../types/Action";
 
-function themeReducer(state = BlueTheme, action: RootAction) {
+
+export function themeReducer(state = BlueTheme, action: Action) {
   switch (action.type) {
-    case CHANGE_THEME:
+    case ActionTypes.CHANGE_THEME:
       if (action.name === 'teal') return TealTheme;
       if (action.name === 'blue') return BlueTheme;
       return state;
@@ -13,5 +15,3 @@ function themeReducer(state = BlueTheme, action: RootAction) {
       return state;
   }
 }
-
-export default themeReducer;
