@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev",
     "start:prod": "webpack-dev-server --config webpack.prod",
-    
+
     "build": "webpack --config webpack.prod",
     "build:watch": "webpack --config webpack.prod --watch",
 
