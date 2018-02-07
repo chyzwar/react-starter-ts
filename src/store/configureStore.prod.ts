@@ -6,8 +6,8 @@ import routerMiddleware from "../middleware/routerMiddleware";
 import themeReducer from "../reducers/themeReducer";
 import todosReducer from "../reducers/todosReducer";
 
-import { State } from "types/State";
-import { Action } from "types/Action";
+import { State } from "../types/State";
+import { Action } from "../types/Action";
 
 const middlewares = applyMiddleware(
   routerMiddleware,
