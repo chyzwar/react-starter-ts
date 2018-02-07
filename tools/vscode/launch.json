@@ -1,0 +1,13 @@
+
+{
+    "configurations": [
+      {
+        "name": "Launch localhost",
+        "type": "chrome",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "url": "http://localhost:8080",
+        "sourceMaps": true
+      }
+    ]
+  }
