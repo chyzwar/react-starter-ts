@@ -6,13 +6,10 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev",
     "start:prod": "webpack-dev-server --config webpack.prod",
-
     "build": "webpack --config webpack.prod",
     "build:watch": "webpack --config webpack.prod --watch",
-
     "tslint": "tslint --project src",
     "tslint:fix": "tslint --project src --fix",
-
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -28,34 +25,31 @@
   "license": "MIT",
   "repository": "https://github.com/chyzwar/react-starter-ts",
   "devDependencies": {
-    "@types/jest": "22.x.x",
     "@types/history": "4.x.x",
-    "@types/node": "8.x.x",
+    "@types/jest": "22.x.x",
+    "@types/node": "^8.5.10",
     "@types/react": "16.x.x",
     "@types/react-dom": "16.x.x",
     "@types/react-redux": "5.x.x",
+    "@types/react-router": "4.x.x",
     "@types/react-router-dom": "4.x.x",
     "@types/react-router-redux": "5.x.x",
-    "@types/react-router": "4.x.x",
-    "@types/webpack": "3.x.x",
     "@types/redux-logger": "3.x.x",
-
-    "typescript": "2.7.x",
-    "tslint": "5.x.x",
-
-    "ts-loader": "*",
+    "@types/webpack": "^3.8.5",
     "css-loader": "*",
-    "style-loader": "*",
-    "url-loader": "*",
-    "file-loader": "*",
-    "webpack": "3.x.x",
-    "webpack-dev-server": "*",
-    "html-webpack-plugin": "2.x.x",
-
-    "jest": "22.x.x",
-    "ts-jest": "22.x.x",
     "enzyme": "3.x.x",
-    "enzyme-adapter-react-16": "1.x.x"
+    "enzyme-adapter-react-16": "1.x.x",
+    "file-loader": "*",
+    "html-webpack-plugin": "2.x.x",
+    "jest": "^22.2.1",
+    "style-loader": "*",
+    "ts-jest": "22.x.x",
+    "ts-loader": "^3.5.0",
+    "tslint": "5.x.x",
+    "typescript": "2.7.x",
+    "url-loader": "*",
+    "webpack": "3.x.x",
+    "webpack-dev-server": "*"
   },
   "dependencies": {
     "axios": "*",
