@@ -1,4 +1,4 @@
-import ActionTypes from "../constants/ActionTypes";
+import { ActionTypes } from "../constants/ActionTypes";
 
 export interface AddTodoAction{
   type: ActionTypes.ADD_TODO;
@@ -12,36 +12,28 @@ export function addTodo(text: string): AddTodoAction {
   };
 }
 
-export function deleteTodo(id: string) {
+export interface DeleteTodoAction{
+  type: ActionTypes.DELETE_TODO;
+  id: number;
+}
+
+export function deleteTodo(id: number): DeleteTodoAction {
   return {
     type: ActionTypes.DELETE_TODO,
     id,
   };
 }
 
-export function editTodo(id: number, text: string) {
+export interface EditTodoAction{
+  type: ActionTypes.EDIT_TODO;
+  id: number;
+  text: string;
+}
+
+export function editTodo(id: number, text: string): EditTodoAction {
   return {
     type: ActionTypes.EDIT_TODO,
     id,
     text,
-  };
-}
-
-export function markTodo(id: string) {
-  return {
-    type: ActionTypes.MARK_TODO,
-    id,
-  };
-}
-
-export function markAll() {
-  return {
-    type: ActionTypes.MARK_ALL,
-  };
-}
-
-export function clearMarked() {
-  return {
-    type: ActionTypes.CLEAR_MARKED,
   };
 }
