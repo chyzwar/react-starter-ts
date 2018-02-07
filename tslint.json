@@ -4,7 +4,9 @@
     "tslint:all"
   ],
   "rules": {
+    "object-literal-sort-keys": false,
     "one-line": false,
+    "eofline": false,
     "member-ordering": false,
     "ordered-imports": false,
     "no-submodule-imports": false,

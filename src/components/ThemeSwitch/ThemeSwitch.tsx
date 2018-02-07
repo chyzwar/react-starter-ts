@@ -1,23 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
-import { changeTheme } from "actions/ThemeActions";
+import { changeTheme } from "../../actions/ThemeActions";
 
+type ThemeSwitchProps = {
+  changeTheme: Function
+};
 
-const ThemeSwitch = props => (
+const ThemeSwitch: React.StatelessComponent = (props: ThemeSwitchProps) => (
   <div>
     <button onClick={props.changeTheme("blue")}> Blue </button>
     <button onClick={props.changeTheme("teal")}> Teal </button>
   </div>
 );
 
-ThemeSwitch.propTypes = {
-  changeTheme: PropTypes.func.isRequired,
-};
-
 const mapDispatchToProps = dispatch => ({
-  changeTheme: themeName => () => {
+  changeTheme: (themeName: string) => {
     dispatch(changeTheme(themeName));
   },
 });

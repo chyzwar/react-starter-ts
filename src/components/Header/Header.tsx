@@ -1,8 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
-import injectSheet from "react-jss";
 import { Link } from "react-router-dom";
+
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
+import withStyles from "material-ui/styles/withStyles";
 
 const styles = ({ palette }) => ({
   nav: {
@@ -25,10 +25,4 @@ const Header = ({ classes }) =>
     </nav>
   );
 
-Header.propTypes = {
-  classes: PropTypes.shape({
-    nav: PropTypes.string,
-  }).isRequired,
-};
-
-export default injectSheet(styles)(Header);
+export default withStyles(styles)(Header);

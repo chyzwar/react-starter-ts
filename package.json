@@ -1,5 +1,5 @@
 {
-  "name": "react-starter",
+  "name": "react-starter-ts",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -26,7 +26,7 @@
   ],
   "author": "Marcin Kopacz",
   "license": "MIT",
-  "repository": "https://github.com/chyzwar/react-starter",
+  "repository": "https://github.com/chyzwar/react-starter-ts",
   "devDependencies": {
     "@types/jest": "22.x.x",
     "@types/history": "4.x.x",
@@ -34,9 +34,11 @@
     "@types/react": "16.x.x",
     "@types/react-dom": "16.x.x",
     "@types/react-redux": "5.x.x",
+    "@types/react-router-dom": "4.x.x",
     "@types/react-router-redux": "5.x.x",
     "@types/react-router": "4.x.x",
     "@types/webpack": "3.x.x",
+    "@types/redux-logger": "3.x.x",
 
     "typescript": "2.7.x",
     "tslint": "5.x.x",

@@ -1,9 +1,9 @@
 import { RouterState } from "react-router-redux";
-import { TodosState } from "../reducers/todosReducer";
-import { ThemeState } from "../reducers/themeReducer";
+import { Theme } from "material-ui/styles/createMuiTheme";
+import { Todo } from "./Todo";
 
 export interface State{
     router: RouterState;
-    theme: ThemeState;
-    todos: TodosState;
+    todos: Todo[];
+    theme: Theme;
 }

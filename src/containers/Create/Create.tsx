@@ -1,19 +1,18 @@
 import React from "react";
-
-import injectSheet from "react-jss";
 import { connect } from "react-redux";
-import { addTodo } from "actions/TodoActions";
-import Header from "components/Header/Header";
+
+import { addTodo } from "../../actions/TodoActions";
+import Header from "../../components/Header/Header";
 
 const styles = ({ palette }) => ({
-  page: {
-    background: palette.primary[150],
-  },
   button: {
     background: palette.primary[50],
   },
   label: {
     fontWeight: "bold",
+  },
+  page: {
+    background: palette.primary[150],
   },
 });
 

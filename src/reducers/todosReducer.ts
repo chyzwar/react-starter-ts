@@ -1,48 +1,35 @@
-import { 
-  ADD_TODO, 
-  DELETE_TODO, 
-  EDIT_TODO, 
-  MARK_TODO, 
-  CLEAR_MARKED 
-} from "../constants/ActionTypes";
+import { ActionTypes } from "../constants/ActionTypes";
+import { Action } from "../types/Action";
+import { Todo } from "../types/Todo";
 
+const initialState: Todo[] = [];
 
-export interface Todo{
-  id: number;
-  mamrked: boolean;
-  text: string;
-}
-
-export type TodosState = Todo[];
-
-const initialState: TodosState = [];
-
-export default function todos(state = initialState, action: RootAction) {
+export default function todos(state = initialState, action: Action): Todo[] {
   switch (action.type) {
-    case ADD_TODO:
+    case ActionTypes.ADD_TODO:
       return [{
         id: (state.length === 0) ? 0 : state[0].id + 1,
         marked: false,
         text: action.text,
       }, ...state];
 
-    case DELETE_TODO:
+    case ActionTypes.DELETE_TODO:
       return state.filter(todo =>
         todo.id !== action.id);
 
-    case EDIT_TODO:
+    case ActionTypes.EDIT_TODO:
       return state.map(todo =>
         (todo.id === action.id ?
           { ...todo, text: action.text } :
           todo));
 
-    case MARK_TODO:
+    case ActionTypes.MARK_TODO:
       return state.map(todo =>
         (todo.id === action.id ?
           { ...todo, marked: !todo.marked } :
           todo));
 
-    case CLEAR_MARKED:
+    case ActionTypes.CLEAR_MARKED:
       return state.filter(todo => todo.marked === false);
 
     default:
