@@ -12,7 +12,7 @@ import todosReducer from "../reducers/todosReducer";
 import { State } from "../types/State";
 import { Action } from "../types/Action";
 import { DeepPartial } from "redux";
-
+// https://github.com/reactjs/redux/issues/2715
 const middlewares = applyMiddleware(
   thunkMiddleware,
   routerMiddleware,
