@@ -3,11 +3,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { changeTheme } from "../../actions/ThemeActions";
 
-type ThemeSwitchProps = {
-  changeTheme: Function
-};
+interface ThemeSwitchProps{
+  changeTheme(name: string): void;
+}
 
-const ThemeSwitch: React.StatelessComponent = (props: ThemeSwitchProps) => (
+const ThemeSwitch: React.SFC<ThemeSwitchProps> = (props) => (
   <div>
     <button onClick={props.changeTheme("blue")}> Blue </button>
     <button onClick={props.changeTheme("teal")}> Teal </button>
@@ -15,9 +15,9 @@ const ThemeSwitch: React.StatelessComponent = (props: ThemeSwitchProps) => (
 );
 
 const mapDispatchToProps = dispatch => ({
-  changeTheme: (themeName: string) => {
-    dispatch(changeTheme(themeName));
+  changeTheme: (name: string) => {
+    dispatch(changeTheme(name));
   },
 });
 
-export default connect(null, mapDispatchToProps)(ThemeSwitch);
+export default connect(undefined, mapDispatchToProps)(ThemeSwitch);

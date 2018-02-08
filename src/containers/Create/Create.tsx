@@ -1,23 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { addTodo } from "../../actions/TodoActions";
 import Header from "../../components/Header/Header";
+import { addTodo } from "../../actions/TodoActions";
 
-const styles = ({ palette }) => ({
-  button: {
-    background: palette.primary[50],
-  },
-  label: {
-    fontWeight: "bold",
-  },
-  page: {
-    background: palette.primary[150],
-  },
-});
+interface CreateProps{
+  addTodo(text: string): void;
+}
 
-class Create extends React.Component {
-  constructor(props) {
+class Create extends React.Component<CreateProps> {
+  public constructor(props: CreateProps) {
     super(props);
 
     this.state = {
@@ -28,7 +20,7 @@ class Create extends React.Component {
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(event) {
+  public onChange(event: React.FormEvent<HTMLInputElement>) {
     event.preventDefault();
 
     this.setState({
@@ -36,7 +28,7 @@ class Create extends React.Component {
     });
   }
 
-  onSubmit(event) {
+  private onSubmit(event) {
     event.preventDefault();
 
     this.props.addTodo(this.state.input);
@@ -45,16 +37,9 @@ class Create extends React.Component {
     });
   }
 
-  render() {
-    const {
-      classes: {
-        page,
-        button,
-      },
-    } = this.props;
-
+  public render() {
     return (
-      <div className={page}>
+      <div>
         <Header />
         <h1> Create Todo </h1>
         <form onSubmit={this.onSubmit}>
@@ -62,18 +47,17 @@ class Create extends React.Component {
             value={this.state.input}
             onChange={this.onChange}
           />
-          <button type="submit" className={button}> Add Todo </button>
+          <button type="submit"> Add Todo </button>
         </form>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   addTodo: (text) => {
     dispatch(addTodo(text));
   },
 });
 
-
-export default connect(null, mapDispatchToProps)(injectSheet(styles)(Create));
+export default connect(null, mapDispatchToProps)(withStyles(styles)(Create));

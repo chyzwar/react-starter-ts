@@ -1,16 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
-
 import { connect } from "react-redux";
+
 import Header from "../../components/Header/Header";
+import { Todo } from "../../types/Todo";
+ 
+interface ViewerProps{
+  todos: Todo[];
+}
 
-class Viewer extends React.Component {
-  constructor(props) {
+interface ViewerState {}
+
+class Viewer extends React.Component<ViewerProps, ViewerState> {
+  public state = {};
+
+  public constructor(props: ViewerProps) {
     super(props);
-
-    this.state = {};
   }
-  render() {
+  public render() {
     const todoList = this.props.todos
       .map(({ id, text }) => <li key={id}> {text} </li>);
 
@@ -25,11 +31,7 @@ class Viewer extends React.Component {
   }
 }
 
-Viewer.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   todos: state.todos,
 });
 

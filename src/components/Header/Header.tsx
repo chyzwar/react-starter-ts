@@ -15,7 +15,7 @@ const styles = ({ palette }) => ({
   },
 });
 
-const Header = ({ classes }) =>
+const Header: React.StatelessComponent = ({ classes }) =>
   (
     <nav className={classes.nav}>
       <Link className={classes.link} to="/">Home</Link>

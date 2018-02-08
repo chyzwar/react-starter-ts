@@ -10,6 +10,7 @@ import todosReducer from "../reducers/todosReducer";
 
 import { State } from "../types/State";
 import { Action } from "../types/Action";
+import { DeepPartial } from "redux";
 
 const middlewares = applyMiddleware(
   thunkMiddleware,
@@ -25,7 +26,7 @@ const rootReducer = combineReducers<State, Action>({
 
 const enhancers = compose(middlewares);
 
-function configureStore(initialState: Partial<State>) {
+function configureStore(initialState: DeepPartial<State> = {}) {
   return createStore(
     rootReducer,
     initialState,

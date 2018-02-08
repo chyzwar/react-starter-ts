@@ -22,16 +22,6 @@ export default function todos(state = initialState, action: Action): Todo[] {
         (todo.id === action.id ?
           { ...todo, text: action.text } :
           todo));
-
-    case ActionTypes.MARK_TODO:
-      return state.map(todo =>
-        (todo.id === action.id ?
-          { ...todo, marked: !todo.marked } :
-          todo));
-
-    case ActionTypes.CLEAR_MARKED:
-      return state.filter(todo => todo.marked === false);
-
     default:
       return state;
   }

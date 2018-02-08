@@ -71,7 +71,6 @@
     "react-router-redux": "next",
     "react-router-dom": "*",
     "redux": "next",
-    "redux-thunk": "2.x.x",
     "redux-devtools-extension": "2.x.x",
     "redux-logger": "3.x.x",
     "redux-thunk": "2.x.x"

@@ -1,11 +1,15 @@
 import React from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
-import { MuiThemeProviderProps } from "material-ui/styles/MuiThemeProvider";
 import { Theme } from "material-ui/styles/createMuiTheme";
 import { connect } from "react-redux";
 
-const ThemeProvider: React.StatelessComponent = ({ theme, children }: MuiThemeProviderProps) => (
+interface ThemeProviderProps{
+  theme: Theme;
+  children: React.ReactChildren;
+}
+
+const ThemeProvider: React.SFC<ThemeProviderProps> = ({ theme, children }) => (
   <MuiThemeProvider theme={theme}>
     {children}
   </MuiThemeProvider>
