@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 
 import Header from "../../components/Header/Header";
 import { Todo } from "../../types/Todo";
- 
+import { State } from "../../types/State";
+
 interface ViewerProps{
   todos: Todo[];
 }
@@ -11,13 +12,15 @@ interface ViewerProps{
 interface ViewerState {}
 
 class Viewer extends React.Component<ViewerProps, ViewerState> {
-  public state = {};
+  public state: Object = {};
 
   public constructor(props: ViewerProps) {
     super(props);
   }
-  public render() {
-    const todoList = this.props.todos
+
+  public render(): JSX.Element {
+    const todoList = this.props
+      .todos
       .map(({ id, text }) => <li key={id}> {text} </li>);
 
     return (
@@ -31,7 +34,7 @@ class Viewer extends React.Component<ViewerProps, ViewerState> {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: State) => ({
   todos: state.todos,
 });
 

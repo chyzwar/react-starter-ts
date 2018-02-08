@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 interface ThemeProviderProps{
   theme: Theme;
-  children: React.ReactChildren;
+  children: React.ReactNode;
 }
 
 const ThemeProvider: React.SFC<ThemeProviderProps> = ({ theme, children }) => (

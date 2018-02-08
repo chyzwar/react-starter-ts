@@ -20,7 +20,7 @@ class Create extends React.Component<CreateProps> {
     this.onChange = this.onChange.bind(this);
   }
 
-  public onChange(event: React.FormEvent<HTMLInputElement>) {
+  public onChange(event: React.FormEvent<HTMLInputElement>): void {
     event.preventDefault();
 
     this.setState({
@@ -28,7 +28,7 @@ class Create extends React.Component<CreateProps> {
     });
   }
 
-  private onSubmit(event) {
+  private onSubmit(event: React.FormEvent<HTMLButtonElement>): void {
     event.preventDefault();
 
     this.props.addTodo(this.state.input);
@@ -55,9 +55,9 @@ class Create extends React.Component<CreateProps> {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addTodo: (text) => {
+  addTodo: (text: string) => {
     dispatch(addTodo(text));
   },
 });
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(Create));
+export default connect(undefined, mapDispatchToProps)(Create);

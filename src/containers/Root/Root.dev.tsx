@@ -10,7 +10,7 @@ import RootProps from "./RootProps";
 import Routes from "../Routes/Routes";
 import ThemeProvider from "../ThemeProvider/ThemeProvider";
 
-const Root: React.StatelessComponent<RootProps> = ({ store, history }) => (
+const Root: React.SFC<RootProps> = ({ store, history }) => (
   <AppContainer>
     <Provider store={store}>
       <ThemeProvider>
