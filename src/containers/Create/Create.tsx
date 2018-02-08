@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { ChangeEvent, FormEvent } from "react";
 
 import Header from "../../components/Header/Header";
 import { addTodo } from "../../actions/TodoActions";
@@ -8,7 +9,11 @@ interface CreateProps{
   addTodo(text: string): void;
 }
 
-class Create extends React.Component<CreateProps> {
+interface CreateState{
+  input: string;
+}
+
+class Create extends React.Component<CreateProps, CreateState> {
   public constructor(props: CreateProps) {
     super(props);
 
@@ -20,7 +25,7 @@ class Create extends React.Component<CreateProps> {
     this.onChange = this.onChange.bind(this);
   }
 
-  public onChange(event: React.FormEvent<HTMLInputElement>): void {
+  public onChange(event: ChangeEvent<HTMLInputElement>): void {
     event.preventDefault();
 
     this.setState({
@@ -28,7 +33,7 @@ class Create extends React.Component<CreateProps> {
     });
   }
 
-  private onSubmit(event: React.FormEvent<HTMLButtonElement>): void {
+  private onSubmit(event: FormEvent<HTMLButtonElement>): void {
     event.preventDefault();
 
     this.props.addTodo(this.state.input);

@@ -19,6 +19,4 @@ export const update = (todo: Todo): AxiosPromise<Todo> => axios.put(
 
 export const remove = (todo: Todo): AxiosPromise<Todo> => axios.delete(
   `TODOS_API/${todo.id}`,
-  todo,
 );
-

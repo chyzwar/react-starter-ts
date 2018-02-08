@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 import withStyles from "material-ui/styles/withStyles";
 
-const styles = ({ palette }) => ({
+import { Link } from "react-router-dom";
+import { Theme } from "material-ui/styles/createMuiTheme";
+
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
+
+
+const styles = ({ palette }: Theme) => ({
   nav: {
     background: palette.primary[500],
     display: "flex",

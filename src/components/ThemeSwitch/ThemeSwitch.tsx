@@ -15,7 +15,7 @@ const ThemeSwitch: React.SFC<ThemeSwitchProps> = (props) => (
 );
 
 const mapDispatchToProps = dispatch => ({
-  changeTheme: (name: string) => {
+  changeTheme: (name: string) => () => {
     dispatch(changeTheme(name));
   },
 });
