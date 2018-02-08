@@ -1,3 +1,4 @@
+// import * as redux from "redux";
 import thunkMiddleware from "redux-thunk";
 
 import { routerReducer } from "react-router-redux";
@@ -12,7 +13,11 @@ import todosReducer from "../reducers/todosReducer";
 import { State } from "../types/State";
 import { Action } from "../types/Action";
 import { DeepPartial } from "redux";
-// https://github.com/reactjs/redux/issues/2715
+
+// redux.__DO_NOT_USE__ActionTypes.INIT = '@@redux/INIT';
+// redux.__DO_NOT_USE__ActionTypes.REPLACE = '@@redux/REPLACE';
+
+
 const middlewares = applyMiddleware(
   thunkMiddleware,
   routerMiddleware,
