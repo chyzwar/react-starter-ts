@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "target": "es2015",
     "lib": [
@@ -13,9 +13,6 @@
     "outDir": "build",
     "newLine": "lf",
     "jsx": "react",
-    "paths": {
-      "types/*": ["src/types/*"]
-    },
 
     "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,

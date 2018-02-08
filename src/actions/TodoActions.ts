@@ -1,6 +1,7 @@
+import { Action } from "redux";
 import { ActionTypes } from "../constants/ActionTypes";
 
-export interface AddTodoAction{
+export interface AddTodoAction extends Action {
   type: ActionTypes.ADD_TODO;
   text: string;
 }
@@ -12,7 +13,7 @@ export function addTodo(text: string): AddTodoAction {
   };
 }
 
-export interface DeleteTodoAction{
+export interface DeleteTodoAction extends Action {
   type: ActionTypes.DELETE_TODO;
   id: number;
 }
@@ -24,7 +25,7 @@ export function deleteTodo(id: number): DeleteTodoAction {
   };
 }
 
-export interface EditTodoAction{
+export interface EditTodoAction extends Action {
   type: ActionTypes.EDIT_TODO;
   id: number;
   text: string;
