@@ -47,4 +47,4 @@ async function bootstrap(): Promise<void> {
  */
 bootstrap()
   .then(() => console.timeEnd("Application started in"))
-  .catch((error) => console.error(`Application error: ${error}`));
+  .catch((error) => console.error(`Application error: ${error}`, error));

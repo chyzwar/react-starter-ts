@@ -1,9 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Dispatch } from "redux";
 import { ChangeEvent, FormEvent } from "react";
 
 import Header from "../../components/Header/Header";
 import { addTodo } from "../../actions/TodoActions";
+import { State } from "../../types/State";
+import { Action } from "../../types/Action";
 
 interface CreateProps{
   addTodo(text: string): void;
@@ -25,7 +28,7 @@ class Create extends React.Component<CreateProps, CreateState> {
     this.onChange = this.onChange.bind(this);
   }
 
-  public onChange(event: ChangeEvent<HTMLInputElement>): void {
+  private onChange(event: ChangeEvent<HTMLInputElement>): void {
     event.preventDefault();
 
     this.setState({
@@ -33,7 +36,7 @@ class Create extends React.Component<CreateProps, CreateState> {
     });
   }
 
-  private onSubmit(event: FormEvent<HTMLButtonElement>): void {
+  private onSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
 
     this.props.addTodo(this.state.input);
@@ -59,7 +62,7 @@ class Create extends React.Component<CreateProps, CreateState> {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: Dispatch<Action, State>) => ({
   addTodo: (text: string) => {
     dispatch(addTodo(text));
   },

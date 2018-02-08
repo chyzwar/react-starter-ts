@@ -37,13 +37,13 @@ module.exports = {
     /**
      * Specifies the name of each output file on disk.
      *
-     * @see: https://webpack.js.org/configuration/output/#output-filename
+     * @see https://webpack.js.org/configuration/output/#output-filename
      */
     filename: '[name].[hash].js',
     /**
      * Configure how source maps are named
      *
-     * @see: https://webpack.js.org/configuration/output/#output-sourcemapfilename
+     * @see https://webpack.js.org/configuration/output/#output-sourcemapfilename
      */
     sourceMapFilename: '[name].[hash].map',
   },
@@ -51,7 +51,7 @@ module.exports = {
     /**
      * Roots for module resolution
      *
-     * @see: https://webpack.js.org/configuration/resolve/#resolve-modules
+     * @see https://webpack.js.org/configuration/resolve/#resolve-modules
      */
     modules: [
       path.resolve('node_modules'),
@@ -59,7 +59,7 @@ module.exports = {
     /**
     * An array of extensions that should be used to resolve modules.
     *
-    * @see: https://webpack.js.org/configuration/resolve/#resolve-extensions
+    * @see https://webpack.js.org/configuration/resolve/#resolve-extensions
     */
     extensions: ['.ts', '.tsx', '.js'],
   },
@@ -69,9 +69,8 @@ module.exports = {
    * @see https://webpack.js.org/configuration/dev-server/#devserver
    */
   devServer: {
-    contentBase: "./dist",
     historyApiFallback: true,
-    compress: true,
+    compress: false,
     port: 8080,
     hot: true,
     inline: true,

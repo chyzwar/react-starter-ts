@@ -3,6 +3,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import { Theme } from "material-ui/styles/createMuiTheme";
 import { connect } from "react-redux";
+import { State } from "../../types/State";
 
 interface ThemeProviderProps{
   theme: Theme;
@@ -15,8 +16,8 @@ const ThemeProvider: React.SFC<ThemeProviderProps> = ({ theme, children }) => (
   </MuiThemeProvider>
 );
 
-const mapStateToProps = ({ theme }: { theme: Theme }) => ({
-  theme,
+const mapStateToProps = (state: State) => ({
+  theme: state.theme,
 });
 
 export default connect(mapStateToProps)(ThemeProvider);
