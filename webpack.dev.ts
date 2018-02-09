@@ -1,10 +1,9 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from "path";
+import webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin"
 
-
-module.exports = {
-  devtool: 'inline-source-map',
+const config: webpack.Configuration  =  {
+  devtool: "inline-source-map",
   cache: true,
   /**
    * Application Entry points the application.
@@ -15,11 +14,11 @@ module.exports = {
     /**
      * Additional react hot reload
      */
-    reactHotLoaderPath: 'react-hot-loader/patch',
+    reactHotLoaderPath: "react-hot-loader/patch",
     /**
      * Application main entry point
      */
-    main: './src/main.tsx',
+    main: "./src/main.tsx",
   },
   output: {
     /**
@@ -27,25 +26,25 @@ module.exports = {
      *
      * @see  https://webpack.js.org/guides/public-path/
      */
-    publicPath: '/',
+    publicPath: "/",
     /**
      * The output directory as absolute path (required).
      *
-     * @see: https://webpack.js.org/configuration/output/#output-path
+     * @see https://webpack.js.org/configuration/output/#output-path
      */
-    path: path.resolve('dist'),
+    path: path.resolve("dist"),
     /**
      * Specifies the name of each output file on disk.
      *
      * @see https://webpack.js.org/configuration/output/#output-filename
      */
-    filename: '[name].[hash].js',
+    filename: "[name].[hash].js",
     /**
      * Configure how source maps are named
      *
      * @see https://webpack.js.org/configuration/output/#output-sourcemapfilename
      */
-    sourceMapFilename: '[name].[hash].map',
+    sourceMapFilename: "[name].[hash].map",
   },
   resolve: {
     /**
@@ -54,14 +53,14 @@ module.exports = {
      * @see https://webpack.js.org/configuration/resolve/#resolve-modules
      */
     modules: [
-      path.resolve('node_modules'),
+      path.resolve("node_modules"),
     ],
     /**
-    * An array of extensions that should be used to resolve modules.
-    *
-    * @see https://webpack.js.org/configuration/resolve/#resolve-extensions
-    */
-    extensions: ['.ts', '.tsx', '.js'],
+     * An array of extensions that should be used to resolve modules.
+     *
+     * @see https://webpack.js.org/configuration/resolve/#resolve-extensions
+     */
+    extensions: [".ts", ".tsx", ".js"],
   },
   /**
    * DevServer Configuration
@@ -76,54 +75,54 @@ module.exports = {
     inline: true,
     overlay: true,
   },
-  target: 'web',
+  target: "web",
   module: {
     loaders: [
       {
         test: /(\.tsx|\.ts)$/,
         exclude: /node_modules/,
         use: [
-          'ts-loader',
+          "ts-loader",
         ],
       },
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader',
+          "style-loader",
+          "css-loader",
         ],
       },
       {
         test: /\.eot$/,
-        loader: 'url-loader',
+        loader: "url-loader",
         query: {
           limit: 65000,
-          name: '[name].[hash].[ext]',
-          minetype: 'application/vnd.ms-fontobject',
+          name: "[name].[hash].[ext]",
+          minetype: "application/vnd.ms-fontobject",
         },
       },
       {
         test: /\.woff2$/,
-        loader: 'url-loader',
+        loader: "url-loader",
         query: {
           limit: 65000,
-          name: '[name].[hash].[ext]',
-          mimetype: 'application/font-woff',
+          name: "[name].[hash].[ext]",
+          mimetype: "application/font-woff",
         },
       },
       {
         test: /\.ttf$/,
-        loader: 'url-loader',
+        loader: "url-loader",
         query: {
           limit: 65000,
-          name: '[name].[hash].[ext]',
-          minetype: 'application/x-font-ttf',
+          name: "[name].[hash].[ext]",
+          minetype: "application/x-font-ttf",
         },
       },
       {
         test: /\.svg$/,
-        loader: 'url-loader',
-        query: { limit: 10000, minetype: 'image/svg+xml' },
+        loader: "url-loader",
+        query: { limit: 10000, minetype: "image/svg+xml" },
       },
     ],
   },
@@ -146,11 +145,11 @@ module.exports = {
      * @see https://webpack.js.org/plugins/html-webpack-plugin/
      */
     new HtmlWebpackPlugin({
-      title: 'React Starter Application',
-      template: 'src/index.html',
-      filename: 'index.html',
-      chunksSortMode: 'manual',
-      chunks: ['reactHotLoaderPath', 'main'],
+      title: "React Starter Application",
+      template: "src/index.html",
+      filename: "index.html",
+      chunksSortMode: "manual",
+      chunks: ["reactHotLoaderPath", "main"],
       minify: {
         collapseWhitespace: false,
         removeComments: false,
@@ -162,9 +161,11 @@ module.exports = {
      * @see https://webpack.js.org/plugins/define-plugin/
      */
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
+      "process.env": {
+        NODE_ENV: JSON.stringify("development"),
       },
     }),
   ],
 };
+
+export default config;
