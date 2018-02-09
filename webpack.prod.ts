@@ -1,6 +1,8 @@
+/* tslint:disable:no-implicit-dependencies */
+
 import * as path from "path";
 import * as webpack from "webpack";
-import * as HtmlWebpackPlugin from "html-webpack-plugin"
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import * as CleanWebpackPlugin from "clean-webpack-plugin";
 
 const config: webpack.Configuration  =  {
@@ -30,7 +32,7 @@ const config: webpack.Configuration  =  {
     /**
      * The output directory as absolute path (required).
      *
-     * @see: https://webpack.js.org/configuration/output/#output-path
+     * @see https://webpack.js.org/configuration/output/#output-path
      */
     path: path.resolve("dist"),
     /**

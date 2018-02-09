@@ -1,6 +1,8 @@
-import path from "path";
-import webpack from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin"
+/* tslint:disable:no-implicit-dependencies */
+
+import * as path from "path";
+import * as webpack from "webpack";
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration  =  {
   devtool: "inline-source-map",
@@ -24,7 +26,7 @@ const config: webpack.Configuration  =  {
     /**
      * The publicPath specifies the public URL address of the output files when referenced
      *
-     * @see  https://webpack.js.org/guides/public-path/
+     * @see https://webpack.js.org/guides/public-path/
      */
     publicPath: "/",
     /**
