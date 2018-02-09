@@ -6,10 +6,13 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev",
     "start:prod": "webpack --config webpack.prod.ts",
+    
     "build": "webpack --config webpack.prod",
     "build:watch": "webpack --config webpack.prod --watch",
+
     "tslint": "tslint --project src",
     "tslint:fix": "tslint --project src --fix",
+
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -39,18 +42,21 @@
     "@types/html-webpack-plugin": "2.x.x",
     "@types/clean-webpack-plugin": "0.x.x",
     "@types/redux-logger": "3.x.x",
+
     "typescript": "2.7.x",
     "tslint": "5.x.x",
     "ts-node": "4.x.x",
+
     "ts-loader": "*",
     "css-loader": "*",
     "style-loader": "*",
     "url-loader": "*",
     "file-loader": "*",
     "webpack": "3.x.x",
-    "webpack-dev-server": "*",
+    "webpack-dev-server": "2.x.x",
     "html-webpack-plugin": "2.x.x",
     "clean-webpack-plugin": "0.x.x",
+
     "jest": "22.x.x",
     "ts-jest": "22.x.x",
     "enzyme": "3.x.x",
