@@ -136,7 +136,7 @@ const config: webpack.Configuration  =  {
      * @see https://github.com/johnagan/clean-webpack-plugin
      */
     new CleanWebpackPlugin(
-      ["build", "coverage"],
+      ["dist", "coverage"],
       { verbose: true },
     ),
     /**
