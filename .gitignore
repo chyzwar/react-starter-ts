@@ -8,7 +8,7 @@ coverage
 node_modules
 
 # Build Folder #
-build
+dist
 
 # Editors
 .vscode
