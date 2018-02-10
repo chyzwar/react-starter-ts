@@ -164,9 +164,7 @@ const config: webpack.Configuration  =  {
      * @see https://webpack.js.org/plugins/define-plugin/
      */
     new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("development"),
-      },
+      "process.env.NODE_ENV":  JSON.stringify(process.env.NODE_ENV),
     }),
   ],
 };

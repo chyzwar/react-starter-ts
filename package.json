@@ -1,8 +1,10 @@
 {
   "name": "react-starter-ts",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "engines" : { 
+    "node" : ">=6.x.x" 
+  },
+  "description": "React starter project with TypeScript",
   "scripts": {
     "start": "better-npm-run start",
     "start:prod": "better-npm-run start:prod",
