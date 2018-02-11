@@ -1,27 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import history from "./constants/History";
+
+import RootDev from "./containers/Root/Root.dev";
+import configureStoreDev from "./store/configureStore.dev";
+
+import RootProd from "./containers/Root/Root.prod";
+import configureStoreProd from "./store/configureStore.prod";
 
 console.time("Application started in");
 switch (process.env.NODE_ENV) {
   case "development":
     {
-      const Root = require("./containers/Root/Root.dev");
-      const configureStore = require("./store/configureStore.dev");
-
       ReactDOM.render(
-        <Root store={configureStore()} history={history} />,
+        <RootDev store={configureStoreDev()} history={history} />,
         document.getElementById("root"),
       );
     }
     break;
   case "production":
     {
-      const Root = require("./containers/Root/Root.prod");
-      const configureStore = require("./store/configureStore.prod");
-
       ReactDOM.render(
-        <Root store={configureStore()} history={history} />,
+        <RootProd store={configureStoreProd()} history={history} />,
         document.getElementById("root"),
       );
     }

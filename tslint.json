@@ -15,7 +15,7 @@
     "only-arrow-functions": false,
     "no-redundant-jsdoc": false,
     "no-default-export": false,
-    "no-any": false,
+    "no-any": true,
     "no-bitwise": false,
     "no-magic-numbers": false,
     "no-require-imports": false,
