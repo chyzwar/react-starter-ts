@@ -84,8 +84,8 @@ const config: webpack.Configuration  =  {
         test: /(\.tsx|\.ts)$/,
         exclude: /node_modules/,
         use: [
-          { loader: "ts-loader" },
           { loader: "babel-loader" },
+          { loader: "ts-loader" },
         ],
       },
       {

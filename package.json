@@ -20,16 +20,18 @@
       "command": "ts-node webpack.server",
       "env": {
         "TS_NODE_PROJECT": "tsconfig.webpack.json",
-        "WEBPACK_PROJECT": "webpack.dev.ts",
-        "NODE_ENV": "development"
+        "WEBPACK_CONFIG": "webpack.dev.ts",
+        "NODE_ENV": "development",
+        "PORT": 8080
       }
     },
     "start:prod": {
       "command": "ts-node webpack.server",
       "env": {
         "TS_NODE_PROJECT": "tsconfig.webpack.json",
-        "WEBPACK_PROJECT": "webpack.prod.ts",
-        "NODE_ENV": "production"
+        "WEBPACK_CONFIG": "webpack.prod.ts",
+        "NODE_ENV": "production",
+        "PORT": 8080
       }
     },
     "build": {
@@ -70,6 +72,7 @@
     "@types/react-router-redux": "5.x.x",
     "@types/react-router": "4.x.x",
     "@types/webpack": "3.x.x",
+    "@types/webpack-dev-server": "2.x.x",
     "@types/html-webpack-plugin": "2.x.x",
     "@types/clean-webpack-plugin": "0.x.x",
     "@types/redux-logger": "3.x.x",

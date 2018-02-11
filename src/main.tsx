@@ -1,50 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import history from "./constants/History";
 
-async function bootstrap(): Promise<void> {
-  console.time("Application started in");
+console.time("Application started in");
+switch (process.env.NODE_ENV) {
+  case "development":
+    {
+      const Root = require("./containers/Root/Root.dev");
+      const configureStore = require("./store/configureStore.dev");
 
-  switch (process.env.NODE_ENV) {
-    case "development":
-      {
-        const { default: Root } = await import(
-          /* webpackChunkName: "Root" */ "./containers/Root/Root.dev",
-        );
-        const { default: configureStore } = await import(
-          /* webpackChunkName: "configureStore" */ "./store/configureStore.dev",
-        );
+      ReactDOM.render(
+        <Root store={configureStore()} history={history} />,
+        document.getElementById("root"),
+      );
+    }
+    break;
+  case "production":
+    {
+      const Root = require("./containers/Root/Root.prod");
+      const configureStore = require("./store/configureStore.prod");
 
-        ReactDOM.render(
-          <Root store={configureStore()} history={history} />,
-          document.getElementById("root"),
-        );
-      }
-      break;
-    case "production":
-      {
-        const { default: Root } = await import(
-          /* webpackChunkName: "Root" */ "./containers/Root/Root.prod",
-        );
-        const { default: configureStore } = await import(
-          /* webpackChunkName: "configureStore" */ "./store/configureStore.prod",
-        );
-
-        ReactDOM.render(
-          <Root store={configureStore()} history={history} />,
-          document.getElementById("root"),
-        );
-      }
-      break;
-    default:
-      throw new Error(`Invalid NODE_ENV: ${process.env.NODE_ENV}`);
-  }
+      ReactDOM.render(
+        <Root store={configureStore()} history={history} />,
+        document.getElementById("root"),
+      );
+    }
+    break;
+  default:
+    throw new Error(`Invalid NODE_ENV: ${process.env.NODE_ENV}`);
 }
-
-/**
- * Start an application
- */
-bootstrap()
-  .then(() => console.timeEnd("Application started in"))
-  .catch((error) => console.error(`Application error: ${error}`, error));
+console.timeEnd("Application started in");
