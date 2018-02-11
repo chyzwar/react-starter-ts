@@ -1,10 +1,11 @@
+import { Reducer } from "redux";
 import { ActionTypes } from "../constants/ActionTypes";
 import { Action } from "../types/Action";
 import { Todo } from "../types/Todo";
 
-const initialState: Todo[] = [];
+export type TodosState = Todo[];
 
-export default function todos(state = initialState, action: Action): Todo[] {
+const todosReducers: Reducer<TodosState, Action> = (state = [], action) => {
   switch (action.type) {
     case ActionTypes.ADD_TODO:
       return [{
@@ -14,8 +15,7 @@ export default function todos(state = initialState, action: Action): Todo[] {
       }, ...state];
 
     case ActionTypes.DELETE_TODO:
-      return state.filter(todo =>
-        todo.id !== action.id);
+      return state.filter(todo => todo.id !== action.id);
 
     case ActionTypes.EDIT_TODO:
       return state.map(todo =>
@@ -26,3 +26,5 @@ export default function todos(state = initialState, action: Action): Todo[] {
       return state;
   }
 }
+
+export default todosReducers;

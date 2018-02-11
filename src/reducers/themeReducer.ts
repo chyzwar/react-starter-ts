@@ -1,20 +1,27 @@
 import BlueTheme from "../constants/BlueTheme";
 import TealTheme from "../constants/TealTheme";
 
+import { Theme } from "material-ui/styles/createMuiTheme";
+import { Reducer } from "redux";
 import { ActionTypes } from "../constants/ActionTypes";
 import { Action } from "../types/Action";
-import { Theme } from "material-ui/styles/createMuiTheme";
 
-export default function themeReducer(state = BlueTheme, action: Action): Theme {
+export type ThemeState = Theme;
+
+const themeReducer: Reducer<ThemeState, Action> = (state = BlueTheme, action: Action) => {
   switch (action.type) {
     case ActionTypes.CHANGE_THEME:
-      if (action.name === "teal") {
-        return TealTheme;
-      }
-      if (action.name === "blue") {
-        return BlueTheme;
+      switch (action.name) {
+        case "TealTheme":
+          return TealTheme;
+        case "BlueTheme":
+          return BlueTheme;
+        default:
+          return state;
       }
     default:
       return state;
   }
 }
+
+export default themeReducer;

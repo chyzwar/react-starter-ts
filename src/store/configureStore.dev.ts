@@ -1,7 +1,5 @@
-// import * as redux from "redux";
 import thunkMiddleware from "redux-thunk";
 
-import { routerReducer } from "react-router-redux";
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
@@ -9,6 +7,7 @@ import loggerMiddleware from "../middleware/loggerMiddleware";
 import routerMiddleware from "../middleware/routerMiddleware";
 import themeReducer from "../reducers/themeReducer";
 import todosReducer from "../reducers/todosReducer";
+import routerReducer from "../reducers/routerReducer";
 
 import { State } from "../types/State";
 import { Action } from "../types/Action";

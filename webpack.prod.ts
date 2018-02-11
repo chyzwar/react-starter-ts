@@ -62,7 +62,7 @@ const config: webpack.Configuration  =  {
      *
      * @see https://webpack.js.org/configuration/resolve/#resolve-extensions
      */
-    extensions: [".ts", ".tsx"],
+    extensions: [".ts", ".tsx", ".js"],
   },
   /**
    * DevServer Configuration when running using webpack cli
@@ -84,7 +84,7 @@ const config: webpack.Configuration  =  {
         test: /(\.tsx|\.ts)$/,
         exclude: /node_modules/,
         use: [
-          "ts-loader",
+          { loader: "ts-loader"},
         ],
       },
       {
