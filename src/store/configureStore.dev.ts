@@ -1,3 +1,4 @@
+import redux from "redux";
 import thunkMiddleware from "redux-thunk";
 
 import { applyMiddleware, combineReducers, createStore } from "redux";
@@ -15,7 +16,7 @@ import { DeepPartial } from "redux";
 
 // redux.__DO_NOT_USE__ActionTypes.INIT = '@@redux/INIT';
 // redux.__DO_NOT_USE__ActionTypes.REPLACE = '@@redux/REPLACE';
-
+console.log(redux);
 
 const middlewares = applyMiddleware(
   thunkMiddleware,

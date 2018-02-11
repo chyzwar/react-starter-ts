@@ -79,7 +79,7 @@ const config: webpack.Configuration  =  {
   },
   target: "web",
   module: {
-    loaders: [
+    rules: [
       {
         test: /(\.tsx|\.ts)$/,
         exclude: /node_modules/,

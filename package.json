@@ -89,7 +89,7 @@
     "style-loader": "*",
     "url-loader": "*",
     "file-loader": "*",
-    "webpack": "next",
+    "webpack": "*",
     "webpack-dev-server": "2.x.x",
     "html-webpack-plugin": "2.x.x",
     "clean-webpack-plugin": "0.x.x",

@@ -25,10 +25,21 @@ const compiler = Webpack(webpackConfig);
  * @see https://webpack.js.org/configuration/dev-server/
  */
 const devServerConfig: WebpackDevServer.Configuration = {
-  hot: true,
-  inline: true,
-  historyApiFallback: true,
   overlay: true,
+  inline: true,
+  hot: true,
+  open: true,
+  historyApiFallback: true,
+  /**
+   * Stats options
+   *
+   * @see https://webpack.js.org/configuration/stats/
+   */
+  stats: {
+    colors: true,
+    depth: true,
+    env: true,
+  },
 };
 
 const devServer = new WebpackDevServer(compiler, devServerConfig);
@@ -37,7 +48,7 @@ devServer.listen(8080, "localhost", () => {
   console.info(`
   Started DevServer on http://localhost:${PORT}
     WEBPACK_CONFIG: ${WEBPACK_CONFIG}
-    NODE_ENV: ${NODE_ENV}}
+    NODE_ENV: ${NODE_ENV}
     PORT: ${PORT}
   `);
 });

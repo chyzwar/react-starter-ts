@@ -3,13 +3,11 @@ Webpack Starter for React-Redux
 
 What included:
 -------------
-- React
+- react
 - Redux
 - Redux DevTool Integration
 - React-Router
 - React-Router-Redux
 - Hot Module Replacement
 - TypeScript
-- Material Theming
-
-https://www.typescriptlang.org/docs/handbook/enums.html
+- Material-ui
