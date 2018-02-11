@@ -76,10 +76,12 @@
     "@types/html-webpack-plugin": "2.x.x",
     "@types/clean-webpack-plugin": "0.x.x",
     "@types/redux-logger": "3.x.x",
+
     "typescript": "2.7.x",
     "tslint": "5.x.x",
     "ts-node": "4.x.x",
     "@babel/core": "latest",
+
     "better-npm-run": "0.x.x",
     "ts-loader": "*",
     "babel-loader": "next",
@@ -87,10 +89,11 @@
     "style-loader": "*",
     "url-loader": "*",
     "file-loader": "*",
-    "webpack": "3.x.x",
+    "webpack": "next",
     "webpack-dev-server": "2.x.x",
     "html-webpack-plugin": "2.x.x",
     "clean-webpack-plugin": "0.x.x",
+
     "jest": "22.x.x",
     "ts-jest": "22.x.x",
     "enzyme": "3.x.x",
@@ -101,6 +104,7 @@
     "material-ui": "next",
     "material-ui-icons": "*",
     "history": "4.x.x",
+
     "react": "16.x.x",
     "react-dom": "16.x.x",
     "react-hot-loader": "next",
@@ -108,6 +112,7 @@
     "react-router": "4.x.x",
     "react-router-redux": "next",
     "react-router-dom": "*",
+
     "redux": "next",
     "redux-devtools-extension": "2.x.x",
     "redux-logger": "3.x.x",

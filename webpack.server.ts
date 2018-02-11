@@ -33,7 +33,7 @@ const devServerConfig: WebpackDevServer.Configuration = {
 
 const devServer = new WebpackDevServer(compiler, devServerConfig);
 
-devServer.listen(PORT, "localhost", () => {
+devServer.listen(8080, "localhost", () => {
   console.info(`
   Started DevServer on http://localhost:${PORT}
     WEBPACK_CONFIG: ${WEBPACK_CONFIG}
