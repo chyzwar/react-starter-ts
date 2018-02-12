@@ -17,8 +17,6 @@ const { default: webpackConfig } = require(
   resolve(WEBPACK_CONFIG)
 );
 
-const compiler = Webpack(webpackConfig);
-
 /**
  * DevServer Configuration
  *
@@ -30,6 +28,8 @@ const devServerConfig: WebpackDevServer.Configuration = {
   hot: true,
   open: true,
   historyApiFallback: true,
+  host: "localhost",
+  contentBase: "dist",
   /**
    * Stats options
    *
@@ -41,6 +41,11 @@ const devServerConfig: WebpackDevServer.Configuration = {
     env: true,
   },
 };
+
+// @ts-ignore https://github.com/DefinitelyTyped/DefinitelyTyped/pull/23480
+WebpackDevServer.addDevServerEntrypoints(webpackConfig, devServerConfig);
+
+const compiler = Webpack(webpackConfig);
 
 const devServer = new WebpackDevServer(compiler, devServerConfig);
 

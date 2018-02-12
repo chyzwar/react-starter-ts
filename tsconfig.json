@@ -13,6 +13,7 @@
     "newLine": "lf",
     "jsx": "react",
 
+    "experimentalDecorators": true,
     "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
