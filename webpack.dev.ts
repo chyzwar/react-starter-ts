@@ -14,10 +14,6 @@ const config: webpack.Configuration  =  {
    */
   entry: {
     /**
-     * Additional react hot reload
-     */
-    reactHotLoaderPath: "react-hot-loader/patch",
-    /**
      * Application main entry point
      */
     main: "./src/main.tsx",
