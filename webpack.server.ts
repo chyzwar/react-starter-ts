@@ -31,7 +31,7 @@ const devServerConfig: WebpackDevServer.Configuration = {
   host: "localhost",
   contentBase: "dist",
   /**
-   * Stats options
+   * Webpack Stats options
    *
    * @see https://webpack.js.org/configuration/stats/
    */

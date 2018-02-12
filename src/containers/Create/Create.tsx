@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { ChangeEvent, FormEvent } from "react";
 
-import Header from "../../components/Header/Header";
+import Header from "../../components/Header";
 import { addTodo } from "../../actions/TodoActions";
 import { State } from "../../types/State";
 import { Action } from "../../types/Action";

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Header from "../../components/Header/Header";
+import Header from "../../components/Header";
 import { Todo } from "../../types/Todo";
 import { State } from "../../types/State";
 

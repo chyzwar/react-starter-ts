@@ -1,10 +1,8 @@
 import React from "react";
-import { Dispatch } from "redux";
 
 import { connect } from "react-redux";
-import { changeTheme } from "../../actions/ThemeActions";
-import { State } from "../../types/State";
-import { Action } from "../../types/Action";
+import { changeTheme } from "../actions/ThemeActions";
+import { Dispatch } from "../types/Dispatch";
 
 interface ThemeSwitchProps {
   changeThemeBlue(): void;
@@ -18,9 +16,9 @@ const ThemeSwitch: React.SFC<ThemeSwitchProps> = (props) => (
   </div>
 );
 
-const mapDispatchToProps = (dispatch: Dispatch<Action, State>) => ({
-  changeThemeBlue: () => { dispatch(changeTheme('BlueTheme')); },
-  changeThemeTeal: () => { dispatch(changeTheme('TealTheme')); },
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  changeThemeBlue: () => { dispatch(changeTheme("BlueTheme")); },
+  changeThemeTeal: () => { dispatch(changeTheme("TealTheme")); },
 });
 
 export default connect(undefined, mapDispatchToProps)(ThemeSwitch);
