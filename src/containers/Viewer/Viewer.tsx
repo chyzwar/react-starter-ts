@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Header from "../../components/Header";
 import { Todo } from "../../types/Todo";
 import { State } from "../../types/State";
 
@@ -25,7 +24,6 @@ class Viewer extends React.Component<ViewerProps, ViewerState> {
 
     return (
       <div>
-        <Header />
         <ul>
           {todoList}
         </ul>

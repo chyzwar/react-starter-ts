@@ -9,6 +9,7 @@ import { ConnectedRouter } from "react-router-redux";
 import RootProps from "./RootProps";
 import Routes from "../Routes/Routes";
 import ThemeProvider from "../ThemeProvider/ThemeProvider";
+import AppDrawer from "../AppDrawer";
 
 const Root: React.SFC<RootProps> = ({ store, history }) => (
   <AppContainer>
@@ -16,7 +17,9 @@ const Root: React.SFC<RootProps> = ({ store, history }) => (
       <ThemeProvider>
         <Reboot />
         <ConnectedRouter history={history}>
-          <Routes />
+          <AppDrawer>
+            <Routes />
+          </AppDrawer>
         </ConnectedRouter>
       </ThemeProvider>
     </Provider>
