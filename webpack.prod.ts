@@ -88,13 +88,6 @@ const config: webpack.Configuration  =  {
         ],
       },
       {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader",
-        ],
-      },
-      {
         test: /\.eot$/,
         loader: "url-loader",
         query: {

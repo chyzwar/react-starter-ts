@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { AppContainer } from "react-hot-loader";
 import { ConnectedRouter } from "react-router-redux";
 
+import GlobalStyles from "../../components/GlobalStyles";
 import RootProps from "./RootProps";
 import Routes from "../Routes/Routes";
 import ThemeProvider from "../ThemeProvider/ThemeProvider";
@@ -16,6 +17,7 @@ const Root: React.SFC<RootProps> = ({ store, history }) => (
     <Provider store={store}>
       <ThemeProvider>
         <Reboot />
+        <GlobalStyles />
         <ConnectedRouter history={history}>
           <AppDrawer>
             <Routes />
