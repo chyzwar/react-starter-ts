@@ -4,6 +4,7 @@ import Reboot from "material-ui/Reboot";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "react-router-redux";
 
+import GlobalStyles from "../../components/GlobalStyles";
 import ThemeProvider from "../ThemeProvider/ThemeProvider";
 import Routes from "../Routes/Routes";
 import RootProps from "./RootProps";
@@ -12,6 +13,7 @@ const Root: React.SFC<RootProps> = ({ store, history }) => (
   <Provider store={store}>
     <ThemeProvider>
       <Reboot />
+      <GlobalStyles />
       <ConnectedRouter history={history}>
         <Routes />
       </ConnectedRouter>
