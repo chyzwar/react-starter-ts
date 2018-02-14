@@ -3,8 +3,10 @@
 import * as path from "path";
 import * as webpack from "webpack";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
+// import * as ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 const config: webpack.Configuration  =  {
+  context: __dirname,
   devtool: "inline-source-map",
   cache: true,
   /**
@@ -80,45 +82,31 @@ const config: webpack.Configuration  =  {
         test: /(\.tsx|\.ts)$/,
         exclude: /node_modules/,
         use: [
-          { loader: "babel-loader" },
-          { loader: "ts-loader" },
+          {
+            loader: "babel-loader",
+            options: {
+              plugins: ["react-hot-loader/babel"],
+            },
+          },
+          {
+            loader: "ts-loader",
+            options: {
+              transpileOnly: false,
+            },
+          },
         ],
-      },
-      {
-        test: /\.eot$/,
-        loader: "url-loader",
-        query: {
-          limit: 65000,
-          name: "[name].[hash].[ext]",
-          minetype: "application/vnd.ms-fontobject",
-        },
-      },
-      {
-        test: /\.woff2$/,
-        loader: "url-loader",
-        query: {
-          limit: 65000,
-          name: "[name].[hash].[ext]",
-          mimetype: "application/font-woff",
-        },
-      },
-      {
-        test: /\.ttf$/,
-        loader: "url-loader",
-        query: {
-          limit: 65000,
-          name: "[name].[hash].[ext]",
-          minetype: "application/x-font-ttf",
-        },
-      },
-      {
-        test: /\.svg$/,
-        loader: "url-loader",
-        query: { limit: 10000, minetype: "image/svg+xml" },
       },
     ],
   },
   plugins: [
+    /**
+     * PLugin: ForkTsCheckerWebpackPlugin
+     *
+     * @see https://github.com/Realytics/fork-ts-checker-webpack-plugin
+     */
+    // new ForkTsCheckerWebpackPlugin({
+    //   watch: ["./src"],
+    // }),
     /**
      * Plugin: NamedModulesPlugin
      *
@@ -140,8 +128,6 @@ const config: webpack.Configuration  =  {
       title: "React Starter Application",
       template: "src/index.html",
       filename: "index.html",
-      chunksSortMode: "manual",
-      chunks: ["reactHotLoaderPath", "main"],
       minify: {
         collapseWhitespace: false,
         removeComments: false,

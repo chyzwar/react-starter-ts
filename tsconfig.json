@@ -1,5 +1,9 @@
 {
   "compileOnSave": false,
+  "exclude": [
+    "./node_modules/*",
+    "./coverage/*"
+  ],
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node",
@@ -28,6 +32,7 @@
     "noUnusedParameters": false,
     "forceConsistentCasingInFileNames": true,
 
+    "skipLibCheck": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,

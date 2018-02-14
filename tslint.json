@@ -20,6 +20,7 @@
     "no-bitwise": false,
     "no-magic-numbers": false,
     "no-require-imports": false,
+    "no-null-keyword": false,
     "variable-name": [true, "ban-keywords"],
     "ban-types": {
       "options": [

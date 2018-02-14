@@ -1,8 +1,8 @@
 import React from "react";
-import Drawer from "material-ui/Drawer";
-import AppBar from "material-ui/AppBar";
-import Toolbar from "material-ui/Toolbar";
-import IconButton from "material-ui/IconButton";
+import Drawer from "material-ui/Drawer/Drawer";
+import AppBar from "material-ui/AppBar/AppBar";
+import Toolbar from "material-ui/Toolbar/Toolbar";
+import IconButton from "material-ui/IconButton/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import ChevronLeftIcon from "material-ui-icons/ChevronLeft";
 import ListItem from "material-ui/List/ListItem";
@@ -12,8 +12,8 @@ import EdiIcon from "material-ui-icons/Edit";
 import AddIcon from "material-ui-icons/Add";
 import ListIcon from "material-ui-icons/List";
 import Paper from "material-ui/Paper/Paper";
+import withStyles from "material-ui/styles/withStyles";
 
-import { withStyles } from "material-ui/styles";
 import { WithStyles } from "material-ui/styles";
 
 const decorate = withStyles({
@@ -84,7 +84,7 @@ const DecoratedClass = decorate<AppDrawerProps>(
               <ListItemIcon>
                 <ListIcon />
               </ListItemIcon>
-              <ListItemText primary="View Todos" />
+              <ListItemText primary="View Todo" />
             </ListItem>
 
             <ListItem button>

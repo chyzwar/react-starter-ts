@@ -87,38 +87,6 @@ const config: webpack.Configuration  =  {
           { loader: "ts-loader"},
         ],
       },
-      {
-        test: /\.eot$/,
-        loader: "url-loader",
-        query: {
-          limit: 65000,
-          name: "[name].[hash].[ext]",
-          minetype: "application/vnd.ms-fontobject",
-        },
-      },
-      {
-        test: /\.woff2$/,
-        loader: "url-loader",
-        query: {
-          limit: 65000,
-          name: "[name].[hash].[ext]",
-          mimetype: "application/font-woff",
-        },
-      },
-      {
-        test: /\.ttf$/,
-        loader: "url-loader",
-        query: {
-          limit: 65000,
-          name: "[name].[hash].[ext]",
-          minetype: "application/x-font-ttf",
-        },
-      },
-      {
-        test: /\.svg$/,
-        loader: "url-loader",
-        query: { limit: 10000, minetype: "image/svg+xml" },
-      },
     ],
   },
   plugins: [
@@ -148,8 +116,6 @@ const config: webpack.Configuration  =  {
       title: "React Starter Application",
       template: "src/index.html",
       filename: "index.html",
-      chunksSortMode: "manual",
-      chunks: ["main"],
       minify: {
         collapseWhitespace: false,
         removeComments: false,
