@@ -38,3 +38,15 @@ export function editTodo(id: number, text: string): EditTodoAction {
     text,
   };
 }
+
+export interface MarkTodoAction extends Action {
+  type: ActionTypes.MARK_TODO;
+  id: number;
+}
+
+export function markTodo(id: number): MarkTodoAction {
+  return {
+    type: ActionTypes.MARK_TODO,
+    id,
+  };
+}

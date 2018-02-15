@@ -1,6 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
+import List from "material-ui/List/List";
+import Paper from "material-ui/Paper/Paper";
+import TodoItem from "../components/TodoItem";
 
+import { connect } from "react-redux";
 import { Todo } from "../types/Todo";
 import { State } from "../types/State";
 
@@ -8,26 +11,18 @@ interface ViewerProps{
   todos: Todo[];
 }
 
-interface ViewerState {}
-
-class Viewer extends React.Component<ViewerProps, ViewerState> {
-  public state: Object = {};
-
-  public constructor(props: ViewerProps) {
-    super(props);
-  }
-
-  public render(): JSX.Element {
-    const todoList = this.props
-      .todos
-      .map(({ id, text }) => <li key={id}> {text} </li>);
+class Viewer extends React.PureComponent<ViewerProps> {
+  public render() {
+    const {
+      todos,
+    } = this.props;
 
     return (
-      <div>
-        <ul>
-          {todoList}
-        </ul>
-      </div>
+      <Paper elevation={0}>
+        <List>
+          {todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)}
+        </List>
+      </Paper>
     );
   }
 }

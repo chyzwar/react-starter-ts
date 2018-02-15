@@ -14,14 +14,13 @@ const todosReducers: Reducer<TodosState, Action> = (state = [], action) => {
         text: action.text,
       }, ...state];
 
-    case ActionTypes.DELETE_TODO:
-      return state.filter(todo => todo.id !== action.id);
+    case ActionTypes.MARK_TODO:
+      return state.map((todo) =>
+        (todo.id === action.id ? {...todo, marked: !todo.marked } : todo));
 
     case ActionTypes.EDIT_TODO:
-      return state.map(todo =>
-        (todo.id === action.id ?
-          { ...todo, text: action.text } :
-          todo));
+      return state.map((todo) =>
+        (todo.id === action.id ? { ...todo, text: action.text } : todo));
     default:
       return state;
   }
