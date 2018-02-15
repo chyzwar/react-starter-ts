@@ -15,6 +15,7 @@ import Paper from "material-ui/Paper/Paper";
 import withStyles from "material-ui/styles/withStyles";
 
 import { WithStyles } from "material-ui/styles";
+import { Link } from "react-router-dom";
 
 const decorate = withStyles({
   closeDrawerIcon: {
@@ -84,20 +85,26 @@ const DecoratedClass = decorate<AppDrawerProps>(
               <ListItemIcon>
                 <ListIcon />
               </ListItemIcon>
-              <ListItemText primary="View Todo" />
+              <Link to="/view">
+                <ListItemText primary="View Todos" />
+              </Link>
             </ListItem>
 
             <ListItem button>
               <ListItemIcon>
                 <EdiIcon />
               </ListItemIcon>
-              <ListItemText primary="Edit Todos" />
+              <Link to="/manage">
+                <ListItemText primary="Edit Todos" />
+              </Link>
             </ListItem>
             <ListItem button>
               <ListItemIcon>
                 <AddIcon />
               </ListItemIcon>
-              <ListItemText primary="Add Todo" />
+              <Link to="/create">
+                <ListItemText primary="Add Todo" />
+              </Link>
             </ListItem>
           </Drawer>
 

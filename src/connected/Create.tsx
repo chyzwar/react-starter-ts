@@ -3,10 +3,9 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { ChangeEvent, FormEvent } from "react";
 
-import Header from "../../components/Header";
-import { addTodo } from "../../actions/TodoActions";
-import { State } from "../../types/State";
-import { Action } from "../../types/Action";
+import { addTodo } from "../actions/TodoActions";
+import { State } from "../types/State";
+import { Action } from "../types/Action";
 
 interface CreateProps{
   addTodo(text: string): void;
@@ -48,7 +47,6 @@ class Create extends React.Component<CreateProps, CreateState> {
   public render() {
     return (
       <div>
-        <Header />
         <h1> Create Todo </h1>
         <form onSubmit={this.onSubmit}>
           <input

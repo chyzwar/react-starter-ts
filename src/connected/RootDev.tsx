@@ -6,11 +6,11 @@ import { Provider } from "react-redux";
 import { AppContainer } from "react-hot-loader";
 import { ConnectedRouter } from "react-router-redux";
 
-import GlobalStyles from "../../components/GlobalStyles";
+import GlobalStyles from "../components/GlobalStyles";
+import AppDrawer from "../components/AppDrawer";
 import RootProps from "./RootProps";
-import Routes from "../Routes/Routes";
-import ThemeProvider from "../ThemeProvider/ThemeProvider";
-import AppDrawer from "../AppDrawer";
+import Routes from "./Routes";
+import ThemeProvider from "./ThemeProvider";
 
 const Root: React.SFC<RootProps> = ({ store, history }) => (
   <AppContainer>

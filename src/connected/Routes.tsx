@@ -1,10 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 
-import Viewer from "../Viewer/Viewer";
-import Create from "../Create/Create";
-import History from "../History/History";
-import Manage from "../Manage/Manage";
+import Viewer from "./Viewer";
+import Create from "./Create";
+import Manage from "./Manage";
 
 const Routes = () => (
   <Switch>
@@ -14,14 +13,14 @@ const Routes = () => (
       component={Viewer}
     />
     <Route
+      path="/view"
       exact
-      path="/create"
-      component={Create}
+      component={Viewer}
     />
     <Route
       exact
-      path="/history"
-      component={History}
+      path="/create"
+      component={Create}
     />
     <Route
       exact

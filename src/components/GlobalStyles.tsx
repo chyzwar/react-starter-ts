@@ -22,6 +22,8 @@ const decorate = withStyles({
       minHeight: "100%",
       width: "100%",
       minWidth: "100%",
+      display: "flex",
+      flexDirection: "column",
     },
   },
 });

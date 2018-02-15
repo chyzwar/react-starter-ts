@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { Todo } from "../../types/Todo";
-import { State } from "../../types/State";
+import { Todo } from "../types/Todo";
+import { State } from "../types/State";
 
 interface ViewerProps{
   todos: Todo[];

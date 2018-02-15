@@ -3,7 +3,6 @@
 import * as path from "path";
 import * as webpack from "webpack";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
-// import * as ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 const config: webpack.Configuration  =  {
   context: __dirname,
@@ -82,31 +81,13 @@ const config: webpack.Configuration  =  {
         test: /(\.tsx|\.ts)$/,
         exclude: /node_modules/,
         use: [
-          {
-            loader: "babel-loader",
-            options: {
-              plugins: ["react-hot-loader/babel"],
-            },
-          },
-          {
-            loader: "ts-loader",
-            options: {
-              transpileOnly: false,
-            },
-          },
+          { loader: "babel-loader" },
+          { loader: "ts-loader" },
         ],
       },
     ],
   },
   plugins: [
-    /**
-     * PLugin: ForkTsCheckerWebpackPlugin
-     *
-     * @see https://github.com/Realytics/fork-ts-checker-webpack-plugin
-     */
-    // new ForkTsCheckerWebpackPlugin({
-    //   watch: ["./src"],
-    // }),
     /**
      * Plugin: NamedModulesPlugin
      *
