@@ -19,5 +19,7 @@
 
 ### Type inference over typedef
 
+Type inference work pretty well in most cases. Combined with strick tsc settings provide strick type checking and exellent ergonomics.
+
 
 ### Flat structure over folders

@@ -1,12 +1,12 @@
 import blue from "material-ui/colors/blue";
-import pink from "material-ui/colors/pink";
 import red from "material-ui/colors/red";
+import grey from "material-ui/colors/grey";
 import createMuiTheme from "material-ui/styles/createMuiTheme";
 
 const BlueTheme = createMuiTheme({
   palette: {
     primary: blue,
-    secondary: pink,
+    secondary: grey,
     error: red,
   },
 });

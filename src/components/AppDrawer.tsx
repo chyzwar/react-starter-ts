@@ -12,6 +12,7 @@ import EdiIcon from "material-ui-icons/Edit";
 import AddIcon from "material-ui-icons/Add";
 import ListIcon from "material-ui-icons/List";
 import Paper from "material-ui/Paper/Paper";
+import ThemeSwitch from "./ThemeSwitch";
 import withStyles from "material-ui/styles/withStyles";
 
 import { WithStyles } from "material-ui/styles";
@@ -24,22 +25,28 @@ const decorate = withStyles({
   paperContent: {
     flexGrow: 1,
   },
+  toolbarRoot: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
 });
 
 interface AppDrawerState {
   open: boolean;
+  tealTheme: boolean;
 }
 
 interface AppDrawerProps {
   children: React.ReactNode;
 }
 
-type PropsWithStyle = AppDrawerProps & WithStyles<"closeDrawerIcon" | "paperContent">;
+type PropsWithStyle = AppDrawerProps & WithStyles<"closeDrawerIcon" | "paperContent" | "toolbarRoot">;
 
 const DecoratedClass = decorate<AppDrawerProps>(
   class AppDrawer extends React.Component<PropsWithStyle, AppDrawerState> {
     public state = {
       open: false,
+      tealTheme: false,
     };
 
     private openDrawer = () => {
@@ -61,16 +68,18 @@ const DecoratedClass = decorate<AppDrawerProps>(
         classes: {
           closeDrawerIcon,
           paperContent,
+          toolbarRoot,
         },
       } = this.props;
 
       return (
         <React.Fragment>
           <AppBar position="static">
-            <Toolbar>
+            <Toolbar classes={{root: toolbarRoot}}>
               <IconButton onClick={this.openDrawer} color="inherit" aria-label="Menu">
                 <MenuIcon />
               </IconButton>
+              <ThemeSwitch />
             </Toolbar>
           </AppBar>
 
