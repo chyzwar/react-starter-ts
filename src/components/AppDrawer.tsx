@@ -33,7 +33,6 @@ const decorate = withStyles({
 
 interface AppDrawerState {
   open: boolean;
-  tealTheme: boolean;
 }
 
 interface AppDrawerProps {
@@ -46,7 +45,6 @@ const DecoratedClass = decorate<AppDrawerProps>(
   class AppDrawer extends React.Component<PropsWithStyle, AppDrawerState> {
     public state = {
       open: false,
-      tealTheme: false,
     };
 
     private openDrawer = () => {

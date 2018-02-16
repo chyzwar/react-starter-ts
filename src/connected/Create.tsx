@@ -1,4 +1,6 @@
 import React from "react";
+import Input from "material-ui/Input/Input";
+import Button from "material-ui/Button/Button";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { ChangeEvent, FormEvent } from "react";
@@ -49,11 +51,11 @@ class Create extends React.Component<CreateProps, CreateState> {
       <div>
         <h1> Create Todo </h1>
         <form onSubmit={this.onSubmit}>
-          <input
+          <Input
             value={this.state.input}
             onChange={this.onChange}
           />
-          <button type="submit"> Add Todo </button>
+          <Button type="submit"> Add Todo </Button>
         </form>
       </div>
     );
