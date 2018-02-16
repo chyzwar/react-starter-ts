@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 
-import Viewer from "./Viewer";
-import Create from "./Create";
-import Manage from "./Manage";
+import Viewer from "../connected/Viewer";
+import Create from "../connected/Create";
+import Manage from "../connected/Manage";
 
 const Routes = () => (
   <Switch>

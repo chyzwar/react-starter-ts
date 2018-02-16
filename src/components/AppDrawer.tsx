@@ -12,7 +12,7 @@ import EdiIcon from "material-ui-icons/Edit";
 import AddIcon from "material-ui-icons/Add";
 import ListIcon from "material-ui-icons/List";
 import Paper from "material-ui/Paper/Paper";
-import ThemeSwitch from "./ThemeSwitch";
+import ThemeSwitch from "../connected/ThemeSwitch";
 import withStyles from "material-ui/styles/withStyles";
 
 import { WithStyles } from "material-ui/styles";

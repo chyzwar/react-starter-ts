@@ -1,8 +1,8 @@
 import React from "react";
 
 
-function Create() {
-  return (<h1> Create </h1>);
+function Manage() {
+  return (<h1> Manage </h1>);
 }
 
-export default Create;
+export default Manage;

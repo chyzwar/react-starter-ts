@@ -7,7 +7,7 @@ import { ConnectedRouter } from "react-router-redux";
 import GlobalStyles from "../components/GlobalStyles";
 import AppDrawer from "../components/AppDrawer";
 import ThemeProvider from "./ThemeProvider";
-import Routes from "./Routes";
+import Routes from "../components/Routes";
 import RootProps from "./RootProps";
 
 const Root: React.SFC<RootProps> = ({ store, history }) => (
