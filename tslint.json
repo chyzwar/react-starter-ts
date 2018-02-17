@@ -4,24 +4,32 @@
     "tslint:all"
   ],
   "rules": {
-    "object-literal-sort-keys": false,
-    "one-line": false,
-    "eofline": false,
-    "typedef": false,
-    "member-ordering": false,
-    "ordered-imports": false,
-    "no-submodule-imports": false,
-    "no-duplicate-imports": false,
-    "interface-name": false,
-    "only-arrow-functions": false,
-    "no-redundant-jsdoc": false,
-    "no-default-export": false,
-    "no-any": true,
-    "no-bitwise": false,
-    "no-magic-numbers": false,
-    "no-require-imports": false,
-    "no-null-keyword": false,
+    "object-literal-sort-keys": false, // In small object I like aesthetic
+    "one-line": false, //  I prefer Stroustrup brace style
+    "eofline": false, // webpack bundle anyway
+    "typedef": false, // type inference is better
+    "member-ordering": false, // sort by usage is more usefull
+    "match-default-export-name": false, // default export can be named by import
+    "ordered-imports": false, // I prefer to order by origin
+    "no-submodule-imports": false, // I prefer default export in general
+    "no-duplicate-imports": false, // named vs default, sometimes usefull
+    "interface-name": false, // too much, interface is often used as type
+    "only-arrow-functions": false, // sometimes you want functional scope
+    "no-default-export": false, // use syntetic exports for non esm
+    "no-any": true, // third party interface
+    "no-null-keyword": false, // needed to render react empty
     "variable-name": [true, "ban-keywords"],
+    "no-console": {
+      "severity": "warning",
+      "options": [
+        "debug",
+        "info",
+        "log",
+        "time",
+        "timeEnd",
+        "trace"
+      ]
+    },
     "ban-types": {
       "options": [
         ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
@@ -29,5 +37,13 @@
         ["Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?"]
       ]
     }
+  },
+  "jsRules": {
+    "max-line-length": {
+      "options": [120]
+    }
+  },
+  "linterOptions": {
+    "exclude": ["node_modules/*", "dist/*"]
   }
 }

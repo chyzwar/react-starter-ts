@@ -2,12 +2,9 @@ import React from "react";
 import Input from "material-ui/Input/Input";
 import Button from "material-ui/Button/Button";
 import { connect } from "react-redux";
-import { Dispatch } from "redux";
 import { ChangeEvent, FormEvent } from "react";
-
 import { addTodo } from "../actions/TodoActions";
-import { State } from "../types/State";
-import { Action } from "../types/Action";
+import { Dispatch } from "../types/Dispatch";
 
 interface CreateProps{
   addTodo(text: string): void;
@@ -24,12 +21,9 @@ class Create extends React.Component<CreateProps, CreateState> {
     this.state = {
       input: "",
     };
-
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onChange = this.onChange.bind(this);
   }
 
-  private onChange(event: ChangeEvent<HTMLInputElement>): void {
+  private onChange = (event: ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault();
 
     this.setState({
@@ -37,9 +31,9 @@ class Create extends React.Component<CreateProps, CreateState> {
     });
   }
 
-  private onSubmit(event: FormEvent<HTMLFormElement>): void {
+  private onSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-
+    console.log("aaa");
     this.props.addTodo(this.state.input);
     this.setState({
       input: "",
@@ -62,7 +56,7 @@ class Create extends React.Component<CreateProps, CreateState> {
   }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<Action, State>) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   addTodo: (text: string) => {
     dispatch(addTodo(text));
   },
