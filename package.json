@@ -35,14 +35,14 @@
       }
     },
     "build": {
-      "command": "webpack --config webpack.prod.ts",
+      "command": "webpack-cli --config webpack.prod.ts",
       "env": {
         "TS_NODE_PROJECT": "tsconfig.webpack.json",
         "NODE_ENV": "production"
       }
     },
     "build:watch": {
-      "command": "webpack --config webpack.prod.ts --watch",
+      "command": "webpack-cli --config webpack.prod.ts --watch",
       "env": {
         "TS_NODE_PROJECT": "tsconfig.webpack.json",
         "NODE_ENV": "production"
@@ -85,8 +85,9 @@
     "ts-loader": "3.x.x",
     "babel-core": "6.x.x",
     "babel-loader": "7.x.x",
-    "webpack": "3.x.x",
-    "webpack-dev-server": "2.x.x",
+    "webpack": "next",
+    "webpack-cli": "2.x.x",
+    "webpack-dev-server": "next",
     "html-webpack-plugin": "2.x.x",
     "clean-webpack-plugin": "0.x.x",
 

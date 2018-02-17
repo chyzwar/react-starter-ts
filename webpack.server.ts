@@ -1,21 +1,22 @@
 /* tslint:disable:no-implicit-dependencies */
 
-import { resolve } from "path";
+import * as path from "path";
 import * as Webpack from "webpack";
 import * as WebpackDevServer from "webpack-dev-server";
 
+/**
+ * Destructure env variable
+ * Provide semsible default values
+ */
 const {
   WEBPACK_CONFIG = "webpack.dev.js",
   NODE_ENV = "development",
-  PORT = 8080,
+  CONTENT_BASE = "dist",
+  HOST = "localhost",
+  PORT = "8080",
 } = process.env;
 
-/**
- * Require configuration, alias default export
- */
-const { default: webpackConfig } = require(
-  resolve(WEBPACK_CONFIG),
-);
+import  webpackConfig = require(path.resolve(WEBPACK_CONFIG));
 
 /**
  * DevServer Configuration
@@ -25,20 +26,21 @@ const { default: webpackConfig } = require(
 const devServerConfig: WebpackDevServer.Configuration = {
   overlay: true,
   inline: true,
-  hot: true,
+  hotOnly: true,
   open: true,
   historyApiFallback: true,
-  host: "localhost",
-  contentBase: "dist",
+  contentBase: CONTENT_BASE,
+  host: HOST,
+  port: PORT,
   /**
    * Webpack Stats options
    *
    * @see https://webpack.js.org/configuration/stats/
    */
   stats: {
+    env: true,
     colors: true,
     depth: true,
-    env: true,
   },
 };
 
@@ -48,11 +50,12 @@ const compiler = Webpack(webpackConfig);
 
 const devServer = new WebpackDevServer(compiler, devServerConfig);
 
-devServer.listen(8080, "localhost", () => {
-  console.info(`
-  Started DevServer on http://localhost:${PORT}
-    WEBPACK_CONFIG: ${WEBPACK_CONFIG}
-    NODE_ENV: ${NODE_ENV}
-    PORT: ${PORT}
-  `);
-});
+devServer.listen(PORT, HOST,
+  (error) => { console.info(`
+    Started DevServer on http://localhost:${PORT}
+      WEBPACK_CONFIG: ${WEBPACK_CONFIG}
+      NODE_ENV: ${NODE_ENV}
+      PORT: ${PORT}
+  ` );
+  },
+);

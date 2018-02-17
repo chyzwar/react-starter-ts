@@ -89,6 +89,9 @@ const config: webpack.Configuration  =  {
       },
     ],
   },
+  optimization: {
+    minimize: false,
+  },
   plugins: [
     /**
      * Plugin CleanWebpackPlugin
@@ -101,33 +104,17 @@ const config: webpack.Configuration  =  {
       { verbose: true },
     ),
     /**
-     * Plugin: UglifyJsPlugin
-     * Description: Minimize all JavaScript output of chunks.
-     *
-     * @see https://github.com/webpack-contrib/uglifyjs-webpack-plugin
-     */
-    new webpack.optimize.UglifyJsPlugin(),
-    /**
      * HtmlWebpackPlugin configuration
      *
      * @see https://webpack.js.org/plugins/html-webpack-plugin/
      */
     new HtmlWebpackPlugin({
-      title: "React Starter Application",
       template: "src/index.html",
       filename: "index.html",
       minify: {
         collapseWhitespace: false,
         removeComments: false,
       },
-    }),
-    /**
-     * Plugin: DefinePlugin, strigify in source code
-     *
-     * @see https://webpack.js.org/plugins/define-plugin/
-     */
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV":  JSON.stringify(process.env.NODE_ENV),
     }),
   ],
 };

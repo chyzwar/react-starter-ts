@@ -5,7 +5,7 @@
     "./coverage/*"
   ],
   "compilerOptions": {
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "target": "es5",
     "lib": [

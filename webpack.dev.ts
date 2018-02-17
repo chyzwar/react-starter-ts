@@ -5,7 +5,6 @@ import * as webpack from "webpack";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration  =  {
-  context: __dirname,
   devtool: "inline-source-map",
   cache: true,
   /**
@@ -87,6 +86,9 @@ const config: webpack.Configuration  =  {
       },
     ],
   },
+  optimization: {
+    minimize: true,
+  },
   plugins: [
     /**
      * Plugin: NamedModulesPlugin
@@ -113,14 +115,6 @@ const config: webpack.Configuration  =  {
         collapseWhitespace: false,
         removeComments: false,
       },
-    }),
-    /**
-     * Plugin: DefinePlugin, strigify in source code
-     *
-     * @see https://webpack.js.org/plugins/define-plugin/
-     */
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV":  JSON.stringify(process.env.NODE_ENV),
     }),
   ],
 };
