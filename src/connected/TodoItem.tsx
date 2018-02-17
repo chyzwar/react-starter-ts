@@ -14,7 +14,7 @@ interface TodoItemProps{
 }
 
 class TodoItem extends React.PureComponent<TodoItemProps> {
-  private markTodo = () => {
+  private readonly markTodo = () => {
     this.props.markTodo(this.props.todo.id);
   }
 

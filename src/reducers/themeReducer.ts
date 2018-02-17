@@ -22,6 +22,6 @@ const themeReducer: Reducer<ThemeState, Action> = (state = BlueTheme, action: Ac
     default:
       return state;
   }
-}
+};
 
 export default themeReducer;

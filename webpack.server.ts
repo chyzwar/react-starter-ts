@@ -14,7 +14,7 @@ const {
  * Require configuration, alias default export
  */
 const { default: webpackConfig } = require(
-  resolve(WEBPACK_CONFIG)
+  resolve(WEBPACK_CONFIG),
 );
 
 /**
@@ -42,7 +42,6 @@ const devServerConfig: WebpackDevServer.Configuration = {
   },
 };
 
-// @ts-ignore https://github.com/DefinitelyTyped/DefinitelyTyped/pull/23480
 WebpackDevServer.addDevServerEntrypoints(webpackConfig, devServerConfig);
 
 const compiler = Webpack(webpackConfig);

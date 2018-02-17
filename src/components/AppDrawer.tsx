@@ -47,13 +47,13 @@ const DecoratedClass = decorate<AppDrawerProps>(
       open: false,
     };
 
-    private openDrawer = () => {
+    private readonly openDrawer = () => {
       this.setState({
         open: true,
       });
     }
 
-    private closeDrawer = () => {
+    private readonly closeDrawer = () => {
       this.setState({
         open: false,
       });

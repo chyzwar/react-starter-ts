@@ -1,7 +1,6 @@
 
-
 export default {
-  name: 'react-starter',
+  name: "react-starter",
   jest: {
     verbose: true,
   },

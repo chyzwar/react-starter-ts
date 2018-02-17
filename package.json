@@ -11,7 +11,7 @@
     "build": "better-npm-run build",
     "build:watch": "better-npm-run build:watch",
     "tslint": "tslint -p .",
-    "tslint:fix": "tslint -p .",
+    "tslint:fix": "tslint -p . --fix",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },

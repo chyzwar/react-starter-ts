@@ -12,7 +12,7 @@ const todosReducers: Reducer<TodosState, Action> = (state = [], action) => {
         id: (state.length === 0) ? 0 : state[0].id + 1,
         marked: false,
         text: action.text,
-      }, ...state];
+      },      ...state];
 
     case ActionTypes.MARK_TODO:
       return state.map((todo) =>
@@ -24,6 +24,6 @@ const todosReducers: Reducer<TodosState, Action> = (state = [], action) => {
     default:
       return state;
   }
-}
+};
 
 export default todosReducers;
