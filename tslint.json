@@ -4,21 +4,30 @@
     "tslint:all"
   ],
   "rules": {
-    "object-literal-sort-keys": false, // In small object I like aesthetic
-    "one-line": false, //  I prefer Stroustrup brace style
-    "eofline": false, // webpack bundle anyway
     "typedef": false, // type inference is better
-    "member-ordering": false, // sort by usage is more usefull
-    "match-default-export-name": false, // default export can be named by import
     "ordered-imports": false, // I prefer to order by origin
-    "no-submodule-imports": false, // I prefer default export in general
-    "no-duplicate-imports": false, // named vs default, sometimes usefull
-    "interface-name": false, // too much, interface is often used as type
     "only-arrow-functions": false, // sometimes you want functional scope
+    "one-line": false, //  I prefer Stroustrup brace style
+    "object-literal-sort-keys": false, // In small object I like aesthetic
+    "no-submodule-imports": false, // I prefer default export in general
+    "no-null-keyword": false, // needed to render react empty
+    "no-duplicate-imports": false, // named vs default, sometimes usefull
     "no-default-export": false, // use syntetic exports for non esm
     "no-any": true, // third party interface
-    "no-null-keyword": false, // needed to render react empty
-    "variable-name": [true, "ban-keywords"],
+    "member-ordering": false, // sort by usage is more usefull
+    "match-default-export-name": false, // default export can be aliased by import
+    "interface-name": false, // too much, interface is often used as type
+    "eofline": false, // webpack bundle anyway
+
+    // relax rules for HoC
+    "variable-name": [true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore"
+    ],
+
+    // tslint-loader will enforce error
     "no-console": {
       "severity": "warning",
       "options": [
@@ -30,6 +39,8 @@
         "trace"
       ]
     },
+
+    // use primitive types, not wrappers
     "ban-types": {
       "options": [
         ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
@@ -42,8 +53,5 @@
     "max-line-length": {
       "options": [120]
     }
-  },
-  "linterOptions": {
-    "exclude": ["node_modules/*", "dist/*"]
   }
 }

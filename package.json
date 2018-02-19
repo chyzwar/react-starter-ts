@@ -10,8 +10,8 @@
     "start:prod": "better-npm-run start:prod",
     "build": "better-npm-run build",
     "build:watch": "better-npm-run build:watch",
-    "tslint": "tslint -p .",
-    "tslint:fix": "tslint -p . --fix",
+    "tslint": "tslint src/**/*.ts{,x} --project .",
+    "tslint:fix": "tslint src/**/*.ts{,x} --fix --project .",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },

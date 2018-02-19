@@ -7,6 +7,7 @@ import * as redux from "redux";
  * @see https://github.com/zalmoxisus/redux-devtools-instrument/pull/17
  */
 declare module "redux"{
+  // tslint:disable-next-line
   const __DO_NOT_USE__ActionTypes: {
     INIT: string;
     REPLACE: string;
