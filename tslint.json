@@ -16,6 +16,7 @@
     "no-any": true, // third party interface
     "member-ordering": false, // sort by usage is more usefull
     "match-default-export-name": false, // default export can be aliased by import
+    "newline-per-chained-call": false, // for jest test it not very usefull
     "interface-name": false, // too much, interface is often used as type
     "eofline": false, // webpack bundle anyway
 
