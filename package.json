@@ -2,16 +2,16 @@
   "name": "react-starter-ts",
   "version": "1.0.0",
   "engines": {
-    "node": ">=6.x.x"
+    "node": ">=8.x.x"
   },
   "description": "React starter project with TypeScript",
   "scripts": {
     "start": "ts-node webpack.server --mode development",
     "start:prod": "ts-node webpack.server --mode production",
-    "build": "webpack-cli --config webpack.prod.ts --mode production",
-    "build:watch": "webpack-cli --config webpack.prod.ts --mode production --watch",
+    "build": "webpack --config webpack.prod.ts --mode production",
+    "build:watch": "webpack --config webpack.prod.ts --mode production --watch",
     "tslint": "tslint --project .",
-    "tslint:fix": "tslint --project . --fix",
+    "tslint:fix": "tslint -project . --fix",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -42,17 +42,19 @@
     "@types/html-webpack-plugin": "2.x.x",
     "@types/clean-webpack-plugin": "0.x.x",
     "@types/redux-logger": "3.x.x",
+
     "typescript": "2.7.x",
     "tslint": "5.x.x",
     "ts-node": "5.x.x",
+
     "ts-loader": "3.x.x",
     "babel-core": "6.x.x",
     "babel-loader": "7.x.x",
     "webpack": "4.x.x",
-    "webpack-cli": "2.x.x",
     "webpack-dev-server": "next",
     "html-webpack-plugin": "2.x.x",
     "clean-webpack-plugin": "0.x.x",
+
     "jest": "22.x.x",
     "ts-jest": "22.x.x",
     "enzyme": "3.x.x",
@@ -63,6 +65,7 @@
     "material-ui": "next",
     "material-ui-icons": "*",
     "history": "4.x.x",
+
     "react": "16.x.x",
     "react-dom": "16.x.x",
     "react-hot-loader": "next",
@@ -70,6 +73,7 @@
     "react-router": "4.x.x",
     "react-router-redux": "next",
     "react-router-dom": "*",
+
     "redux": "next",
     "redux-devtools-extension": "2.x.x",
     "redux-logger": "3.x.x",
