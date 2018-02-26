@@ -6,48 +6,14 @@
   },
   "description": "React starter project with TypeScript",
   "scripts": {
-    "start": "better-npm-run start",
-    "start:prod": "better-npm-run start:prod",
-    "build": "better-npm-run build",
-    "build:watch": "better-npm-run build:watch",
-    "tslint": "tslint -p .",
-    "tslint:fix": "tslint -p . --fix",
+    "start": "ts-node webpack.server --mode development",
+    "start:prod": "ts-node webpack.server --mode production",
+    "build": "webpack-cli --config webpack.prod.ts --mode production",
+    "build:watch": "webpack-cli --config webpack.prod.ts --mode production --watch",
+    "tslint": "tslint --project .",
+    "tslint:fix": "tslint --project . --fix",
     "test": "jest",
     "test:coverage": "jest --coverage"
-  },
-  "betterScripts": {
-    "start": {
-      "command": "ts-node webpack.server",
-      "env": {
-        "TS_NODE_PROJECT": "tsconfig.webpack.json",
-        "WEBPACK_CONFIG": "webpack.dev.ts",
-        "NODE_ENV": "development",
-        "PORT": 8080
-      }
-    },
-    "start:prod": {
-      "command": "ts-node webpack.server",
-      "env": {
-        "TS_NODE_PROJECT": "tsconfig.webpack.json",
-        "WEBPACK_CONFIG": "webpack.prod.ts",
-        "NODE_ENV": "production",
-        "PORT": 8080
-      }
-    },
-    "build": {
-      "command": "webpack-cli --config webpack.prod.ts",
-      "env": {
-        "TS_NODE_PROJECT": "tsconfig.webpack.json",
-        "NODE_ENV": "production"
-      }
-    },
-    "build:watch": {
-      "command": "webpack-cli --config webpack.prod.ts --watch",
-      "env": {
-        "TS_NODE_PROJECT": "tsconfig.webpack.json",
-        "NODE_ENV": "production"
-      }
-    }
   },
   "keywords": [
     "starter",
@@ -76,21 +42,17 @@
     "@types/html-webpack-plugin": "2.x.x",
     "@types/clean-webpack-plugin": "0.x.x",
     "@types/redux-logger": "3.x.x",
-
     "typescript": "2.7.x",
     "tslint": "5.x.x",
-    "ts-node": "4.x.x",
-
-    "better-npm-run": "0.x.x",
+    "ts-node": "5.x.x",
     "ts-loader": "3.x.x",
     "babel-core": "6.x.x",
     "babel-loader": "7.x.x",
-    "webpack": "next",
+    "webpack": "4.x.x",
     "webpack-cli": "2.x.x",
     "webpack-dev-server": "next",
     "html-webpack-plugin": "2.x.x",
     "clean-webpack-plugin": "0.x.x",
-
     "jest": "22.x.x",
     "ts-jest": "22.x.x",
     "enzyme": "3.x.x",
@@ -101,7 +63,6 @@
     "material-ui": "next",
     "material-ui-icons": "*",
     "history": "4.x.x",
-
     "react": "16.x.x",
     "react-dom": "16.x.x",
     "react-hot-loader": "next",
@@ -109,7 +70,6 @@
     "react-router": "4.x.x",
     "react-router-redux": "next",
     "react-router-dom": "*",
-
     "redux": "next",
     "redux-devtools-extension": "2.x.x",
     "redux-logger": "3.x.x",
