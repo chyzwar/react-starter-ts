@@ -9,20 +9,16 @@ import configureStoreProd from "./store/configureStore.prod";
 
 switch (process.env.NODE_ENV) {
   case "development":
-    {
-      ReactDOM.render(
-        <RootDev store={configureStoreDev()} history={history} />,
-        document.getElementById("root"),
-      );
-    }
+    ReactDOM.render(
+      <RootDev store={configureStoreDev()} history={history} />,
+      document.getElementById("root"),
+    );
     break;
   case "production":
-    {
-      ReactDOM.render(
-        <RootProd store={configureStoreProd()} history={history} />,
-        document.getElementById("root"),
-      );
-    }
+    ReactDOM.render(
+      <RootProd store={configureStoreProd()} history={history} />,
+      document.getElementById("root"),
+    );
     break;
   default:
     throw new Error(`Invalid NODE_ENV: ${process.env.NODE_ENV}`);
