@@ -89,9 +89,6 @@ const config: webpack.Configuration  =  {
       },
     ],
   },
-  optimization: {
-    minimize: false,
-  },
   plugins: [
     /**
      * Plugin CleanWebpackPlugin
@@ -99,9 +96,10 @@ const config: webpack.Configuration  =  {
      *
      * @see https://github.com/johnagan/clean-webpack-plugin
      */
-    new CleanWebpackPlugin(
-      ["dist", "coverage"],
-      { verbose: true },
+    new CleanWebpackPlugin([
+      "dist",
+      "coverage"
+     ],
     ),
     /**
      * HtmlWebpackPlugin configuration

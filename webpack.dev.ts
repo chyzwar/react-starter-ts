@@ -86,21 +86,7 @@ const config: webpack.Configuration  =  {
       },
     ],
   },
-  optimization: {
-    minimize: true,
-  },
   plugins: [
-    /**
-     * Plugin: NamedModulesPlugin
-     *
-     * @see https://webpack.js.org/plugins/named-modules-plugin/
-     */
-    new webpack.NamedModulesPlugin(),
-    /**
-     * Plugin: HotModuleReplacementPlugin
-     *
-     * @see https://webpack.js.org/plugins/hot-module-replacement-plugin/
-     */
     new webpack.HotModuleReplacementPlugin(),
     /**
      * HtmlWebpackPlugin configuration
