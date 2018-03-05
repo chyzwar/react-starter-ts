@@ -1,21 +1,3 @@
-import * as redux from "redux";
-
-/**
- * Workaround for redux 4 incompatibility
- *
- * @see https://github.com/gaearon/redux-devtools/issues/391
- * @see https://github.com/zalmoxisus/redux-devtools-instrument/pull/17
- */
-declare module "redux"{
-  const __DO_NOT_USE__ActionTypes: {
-    INIT: string;
-    REPLACE: string;
-  };
-}
-
-redux.__DO_NOT_USE__ActionTypes.INIT = "@@redux/INIT";
-redux.__DO_NOT_USE__ActionTypes.REPLACE = "@@redux/REPLACE";
-
 import thunkMiddleware from "redux-thunk";
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
