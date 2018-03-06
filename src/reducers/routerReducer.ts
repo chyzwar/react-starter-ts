@@ -6,9 +6,8 @@ const initialState: RouterState = {
   location: null,
 };
 
-const reducer: Reducer<RouterState, Action> = (state = initialState, action) => {
-  return routerReducer(state, action);
-};
-
+// tslint:disable-next-line
+const reducer: Reducer<RouterState, Action> = (state = initialState, action) =>
+  routerReducer(state, action);
 
 export default reducer;

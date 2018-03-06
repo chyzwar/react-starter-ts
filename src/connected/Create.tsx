@@ -33,7 +33,7 @@ class Create extends React.Component<CreateProps, CreateState> {
 
   private readonly onSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    console.log("aaa");
+
     this.props.addTodo(this.state.input);
     this.setState({
       input: "",

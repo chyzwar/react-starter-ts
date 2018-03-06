@@ -27,7 +27,24 @@ In some cases when liblary definitions change - type inference will be more robu
 ### 2. Flat structure over folders
 
 It is better to avoid deeply nested structure of directories. Some project use folder per component with index.js.
-In this project I choose to use super flat structure. If you want you can still migrate to folder per component without changing your imports. 
+In this project I choose to use super flat structure. If you want you can still migrate to folder per component without changing your imports.
+
+```asci
+components/
+├── Header.tsx
+└── Footer.tsx
+```
+
+```asci
+components/
+├── Header/
+│   ├── Header.tsx
+│   ├── index.ts
+├── Footer/
+│   ├── Footer.tsx
+│   └── index.ts
+```
+
 
 ### 3. Componenets vs Connected components
 

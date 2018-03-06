@@ -1,9 +1,5 @@
 {
   "compileOnSave": false,
-  "exclude": [
-    "./node_modules/*",
-    "./coverage/*"
-  ],
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
