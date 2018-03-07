@@ -7,7 +7,7 @@
 1. Copy launch.json to .vscode/launch.json
 1. npm start and click on "Launch localhost"
 
-## Usefull extensions
+## Local TypeScript
 
-- TSlint
+1. Copy settings.json to .vscode/settings.json
 

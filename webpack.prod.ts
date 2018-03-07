@@ -1,9 +1,9 @@
 /* tslint:disable:no-implicit-dependencies */
 
-import * as path from "path";
-import * as webpack from "webpack";
-import * as HtmlWebpackPlugin from "html-webpack-plugin";
-import * as CleanWebpackPlugin from "clean-webpack-plugin";
+import path from "path";
+import webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CleanWebpackPlugin from "clean-webpack-plugin";
 
 const config: webpack.Configuration  =  {
   devtool: "source-map",
@@ -98,7 +98,7 @@ const config: webpack.Configuration  =  {
      */
     new CleanWebpackPlugin([
       "dist",
-      "coverage"
+      "coverage",
      ],
     ),
     /**
@@ -109,6 +109,8 @@ const config: webpack.Configuration  =  {
     new HtmlWebpackPlugin({
       template: "src/index.html",
       filename: "index.html",
+      chunksSortMode: "manual",
+      chunks: ["react", "main"],
       minify: {
         collapseWhitespace: false,
         removeComments: false,

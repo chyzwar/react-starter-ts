@@ -1,7 +1,7 @@
 /* tslint:disable:no-implicit-dependencies */
 
-import * as Webpack from "webpack";
-import * as WebpackDevServer from "webpack-dev-server";
+import Webpack from "webpack";
+import WebpackDevServer from "webpack-dev-server";
 import webpackConfig from "./webpack.dev";
 
 /**
@@ -10,6 +10,7 @@ import webpackConfig from "./webpack.dev";
  * @see https://webpack.js.org/configuration/dev-server/
  */
 const devServerConfig: WebpackDevServer.Configuration = {
+  host: "localhost",
   overlay: true,
   inline: true,
   hotOnly: true,
@@ -20,7 +21,6 @@ const devServerConfig: WebpackDevServer.Configuration = {
     depth: true,
   },
 };
-
 
 WebpackDevServer.addDevServerEntrypoints(webpackConfig, devServerConfig);
 

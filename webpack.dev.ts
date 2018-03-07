@@ -1,8 +1,8 @@
 /* tslint:disable:no-implicit-dependencies */
 
-import * as path from "path";
-import * as webpack from "webpack";
-import * as HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
+import webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration  =  {
   devtool: "inline-source-map",
@@ -13,6 +13,13 @@ const config: webpack.Configuration  =  {
    * @see https://webpack.js.org/configuration/entry-context/#entry
    */
   entry: {
+    /**
+     * Include react as additional entry
+     */
+    react: [
+      "react",
+      "react-dom",
+    ],
     /**
      * Application main entry point
      */
@@ -97,6 +104,8 @@ const config: webpack.Configuration  =  {
       title: "React Starter Application",
       template: "src/index.html",
       filename: "index.html",
+      chunksSortMode: "manual",
+      chunks: ["react", "main"],
       minify: {
         collapseWhitespace: false,
         removeComments: false,
