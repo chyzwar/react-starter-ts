@@ -8,10 +8,13 @@
   "scripts": {
     "start": "ts-node webpack.server --mode development",
     "start:prod": "ts-node webpack.server --mode production",
-    "build": "webpack --config webpack.prod.ts --mode production",
-    "build:watch": "webpack --config webpack.prod.ts --mode production --watch",
+
+    "build": "webpack-cli --config webpack.prod.ts --mode production",
+    "build:watch": "webpack-cli --config webpack.prod.ts --mode production --watch",
+
     "tslint": "tslint --project .",
     "tslint:fix": "tslint -project . --fix",
+
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -37,7 +40,7 @@
     "@types/react-router-dom": "4.x.x",
     "@types/react-router-redux": "5.x.x",
     "@types/react-router": "4.x.x",
-    "@types/webpack": "3.x.x",
+    "@types/webpack": "4.x.x",
     "@types/webpack-dev-server": "2.x.x",
     "@types/html-webpack-plugin": "*",
     "@types/clean-webpack-plugin": "0.x.x",
@@ -51,6 +54,7 @@
     "babel-core": "6.x.x",
     "babel-loader": "7.x.x",
     "webpack": "4.x.x",
+    "webpack-cli": "2.x.x",
     "webpack-dev-server": "3.x.x",
     "html-webpack-plugin": "3.x.x",
     "clean-webpack-plugin": "0.x.x",

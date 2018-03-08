@@ -37,6 +37,6 @@
     "pretty": true,
     "allowJs": true,
     "declaration": false,
-    "listEmittedFiles": true
+    "listEmittedFiles": true,
   }
 }

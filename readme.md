@@ -4,7 +4,7 @@ This is overcomplicated todo app.
 
 ## What included
 
-- webpack - 3.x.x
+- webpack - 4.x.x
 - react - 16.x.x
 - react-redux - 4.x.x
 - react-router 4.x.x

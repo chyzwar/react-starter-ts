@@ -89,6 +89,21 @@ const config: webpack.Configuration  =  {
       },
     ],
   },
+  optimization: {
+    /**
+     * Create common chunk with code shared chunks
+     */
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          name: false,
+          chunks: "all",
+          minChunks: 2,
+          enforce: true,
+        }
+      }
+    },
+  },
   plugins: [
     /**
      * Plugin CleanWebpackPlugin
