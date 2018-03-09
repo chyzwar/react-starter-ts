@@ -1,10 +1,13 @@
 /* tslint:disable:no-implicit-dependencies */
 
-import path from "path";
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 
+import { resolve } from "path";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+
+// @ts-ignore
 const config: webpack.Configuration  =  {
   mode: "production",
   /**
@@ -30,7 +33,7 @@ const config: webpack.Configuration  =  {
      *
      * @see https://webpack.js.org/configuration/output/#output-path
      */
-    path: path.resolve("dist"),
+    path: resolve("dist"),
   },
   resolve: {
     /**
@@ -39,7 +42,7 @@ const config: webpack.Configuration  =  {
      * @see https://webpack.js.org/configuration/resolve/#resolve-modules
      */
     modules: [
-      path.resolve("node_modules"),
+      resolve("node_modules"),
     ],
     /**
      * An array of extensions that should be used to resolve modules.
@@ -74,25 +77,28 @@ const config: webpack.Configuration  =  {
     ],
   },
   optimization: {
-    // splitChunks: {
-    //   cacheGroups: {
-    //     commons: {
-    //       test: /src/,
-    //       name: false,
-    //       chunks: "initial",
-    //       enforce: true,
-    //     },
-    //     vendor: {
-    //       test: /node_modules/,
-    //       name: false,
-    //       chunks: "initial",
-    //       enforce: true,
-    //     },
-    //   },
-    // },
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /src/,
+          name: false,
+          chunks: "all",
+          enforce: true,
+        },
+        vendor: {
+          test: /node_modules/,
+          name: false,
+          chunks: "all",
+          enforce: true,
+        },
+      },
+    },
     runtimeChunk: true,
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: "static",
+    }),
     /**
      * Plugin CleanWebpackPlugin
      * Description: Clean build folder.
