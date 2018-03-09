@@ -6,11 +6,11 @@
   },
   "description": "React starter project with TypeScript",
   "scripts": {
-    "start": "ts-node webpack.server --mode development",
-    "start:prod": "ts-node webpack.server --mode production",
+    "start": "ts-node webpack.server",
+    "start:prod": "ts-node webpack.server",
 
-    "build": "webpack-cli --config webpack.prod.ts --mode production",
-    "build:watch": "webpack-cli --config webpack.prod.ts --mode production --watch",
+    "build": "webpack-cli --config webpack.prod.ts",
+    "build:watch": "webpack-cli --config webpack.prod.ts --watch",
 
     "tslint": "tslint --project .",
     "tslint:fix": "tslint -project . --fix",

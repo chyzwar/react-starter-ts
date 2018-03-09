@@ -6,11 +6,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 
 const config: webpack.Configuration  =  {
-  devtool: "source-map",
-  /**
-   * Disable in-memmory budles/files
-   */
-  cache: false,
+  mode: "production",
   /**
    * Application Entry points the application.
    *
@@ -35,18 +31,6 @@ const config: webpack.Configuration  =  {
      * @see https://webpack.js.org/configuration/output/#output-path
      */
     path: path.resolve("dist"),
-    /**
-     * Specifies the name of each output file on disk.
-     *
-     * @see https://webpack.js.org/configuration/output/#output-filename
-     */
-    filename: "[name].[hash].js",
-    /**
-     * Configure how source maps are named
-     *
-     * @see https://webpack.js.org/configuration/output/#output-sourcemapfilename
-     */
-    sourceMapFilename: "[name].[hash].map",
   },
   resolve: {
     /**
@@ -90,19 +74,23 @@ const config: webpack.Configuration  =  {
     ],
   },
   optimization: {
-    /**
-     * Create common chunk with code shared chunks
-     */
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          name: false,
-          chunks: "all",
-          minChunks: 2,
-          enforce: true,
-        }
-      }
-    },
+    // splitChunks: {
+    //   cacheGroups: {
+    //     commons: {
+    //       test: /src/,
+    //       name: false,
+    //       chunks: "initial",
+    //       enforce: true,
+    //     },
+    //     vendor: {
+    //       test: /node_modules/,
+    //       name: false,
+    //       chunks: "initial",
+    //       enforce: true,
+    //     },
+    //   },
+    // },
+    runtimeChunk: true,
   },
   plugins: [
     /**
@@ -124,8 +112,6 @@ const config: webpack.Configuration  =  {
     new HtmlWebpackPlugin({
       template: "src/index.html",
       filename: "index.html",
-      chunksSortMode: "manual",
-      chunks: ["react", "main"],
       minify: {
         collapseWhitespace: false,
         removeComments: false,

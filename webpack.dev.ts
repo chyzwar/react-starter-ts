@@ -5,21 +5,13 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration  =  {
-  devtool: "inline-source-map",
-  cache: true,
+  mode: "development",
   /**
    * Application Entry points the application.
    *
    * @see https://webpack.js.org/configuration/entry-context/#entry
    */
   entry: {
-    /**
-     * Include react as additional entry
-     */
-    react: [
-      "react",
-      "react-dom",
-    ],
     /**
      * Application main entry point
      */
@@ -38,18 +30,6 @@ const config: webpack.Configuration  =  {
      * @see https://webpack.js.org/configuration/output/#output-path
      */
     path: path.resolve("dist"),
-    /**
-     * Specifies the name of each output file on disk.
-     *
-     * @see https://webpack.js.org/configuration/output/#output-filename
-     */
-    filename: "[name].[hash].js",
-    /**
-     * Configure how source maps are named
-     *
-     * @see https://webpack.js.org/configuration/output/#output-sourcemapfilename
-     */
-    sourceMapFilename: "[name].[hash].map",
   },
   resolve: {
     /**
@@ -104,8 +84,6 @@ const config: webpack.Configuration  =  {
       title: "React Starter Application",
       template: "src/index.html",
       filename: "index.html",
-      chunksSortMode: "manual",
-      chunks: ["react", "main"],
       minify: {
         collapseWhitespace: false,
         removeComments: false,
