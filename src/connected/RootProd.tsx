@@ -1,5 +1,5 @@
 import React from "react";
-import Reboot from "material-ui/Reboot";
+import CssBaseline from "material-ui/CssBaseline";
 
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "react-router-redux";
@@ -13,7 +13,7 @@ import RootProps from "./RootProps";
 const Root: React.SFC<RootProps> = ({ store, history }) => (
   <Provider store={store}>
     <ThemeProvider>
-      <Reboot />
+      <CssBaseline />
       <GlobalStyles />
       <ConnectedRouter history={history}>
         <AppDrawer>
