@@ -1,5 +1,5 @@
 import React from "react";
-import CssBaseline from "material-ui/CssBaseline";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 import { hot } from "react-hot-loader";
 import { Provider } from "react-redux";

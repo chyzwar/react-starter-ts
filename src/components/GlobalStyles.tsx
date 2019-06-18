@@ -1,7 +1,7 @@
 import React from "react";
-import withStyles from "material-ui/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles";
 
-import { WithStyles } from "material-ui/styles";
+import { WithStyles } from "@material-ui/core/styles";
 
 const decorate = withStyles({
   "@global": {

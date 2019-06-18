@@ -1,6 +1,7 @@
 import React from "react";
-import Input from "material-ui/Input/Input";
-import Button from "material-ui/Button/Button";
+import Input from "@material-ui/core/Input/Input";
+import Button from "@material-ui/core/Button/Button";
+
 import { connect } from "react-redux";
 import { ChangeEvent, FormEvent } from "react";
 import { addTodo } from "../actions/TodoActions";

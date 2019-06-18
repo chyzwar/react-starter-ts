@@ -1,7 +1,7 @@
 import React from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 
-import { Theme } from "material-ui/styles/createMuiTheme";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import { connect } from "react-redux";
 import { State } from "../types/State";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "material-ui/Button/Button";
+import Button from "@material-ui/core/Button/Button";
 
 import { connect } from "react-redux";
 import { changeTheme } from "../actions/ThemeActions";
@@ -12,8 +12,8 @@ interface ThemeSwitchProps {
 
 const ThemeSwitch: React.SFC<ThemeSwitchProps> = (props) => (
   <div>
-    <Button variant="raised" color="secondary" onClick={props.changeThemeBlue}> Blue </Button>
-    <Button variant="raised" color="secondary" onClick={props.changeThemeTeal}> Teal </Button>
+    <Button variant="outlined" color="secondary" onClick={props.changeThemeBlue}> Blue </Button>
+    <Button variant="outlined" color="secondary" onClick={props.changeThemeTeal}> Teal </Button>
   </div>
 );
 

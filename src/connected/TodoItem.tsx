@@ -1,7 +1,7 @@
 import React from "react";
-import ListItem from "material-ui/List/ListItem";
-import Checkbox from "material-ui/Checkbox/Checkbox";
-import ListItemText from "material-ui/List/ListItemText";
+import ListItem from "@material-ui/core/ListItem";
+import Checkbox from "@material-ui/core/Checkbox/Checkbox";
+import ListItemText from "@material-ui/core/ListItemText";
 
 import { connect } from "react-redux";
 import { markTodo } from "../actions/TodoActions";

@@ -1,21 +1,21 @@
 import React from "react";
-import Drawer from "material-ui/Drawer/Drawer";
-import AppBar from "material-ui/AppBar/AppBar";
-import Toolbar from "material-ui/Toolbar/Toolbar";
-import IconButton from "material-ui/IconButton/IconButton";
-import MenuIcon from "material-ui-icons/Menu";
-import ChevronLeftIcon from "material-ui-icons/ChevronLeft";
-import ListItem from "material-ui/List/ListItem";
-import ListItemIcon from "material-ui/List/ListItemIcon";
-import ListItemText from "material-ui/List/ListItemText";
-import EdiIcon from "material-ui-icons/Edit";
-import AddIcon from "material-ui-icons/Add";
-import ListIcon from "material-ui-icons/List";
-import Paper from "material-ui/Paper/Paper";
+import Drawer from "@material-ui/core/Drawer/Drawer";
+import AppBar from "@material-ui/core/AppBar/AppBar";
+import Toolbar from "@material-ui/core/Toolbar/Toolbar";
+import IconButton from "@material-ui/core/IconButton/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import EdiIcon from "@material-ui/icons/Edit";
+import AddIcon from "@material-ui/icons/Add";
+import ListIcon from "@material-ui/icons/List";
+import Paper from "@material-ui/core/Paper/Paper";
 import ThemeSwitch from "../connected/ThemeSwitch";
-import withStyles from "material-ui/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles";
 
-import { WithStyles } from "material-ui/styles";
+import { WithStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 
 const decorate = withStyles({

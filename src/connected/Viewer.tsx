@@ -1,6 +1,6 @@
 import React from "react";
-import List from "material-ui/List/List";
-import Paper from "material-ui/Paper/Paper";
+import List from "@material-ui/core/List";
+import Paper from "@material-ui/core/Paper/Paper";
 import TodoItem from "./TodoItem";
 
 import { connect } from "react-redux";

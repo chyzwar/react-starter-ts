@@ -1,10 +1,9 @@
 /* tslint:disable:no-implicit-dependencies */
 
 import webpack from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import CleanWebpackPlugin from "clean-webpack-plugin";
-
 import { resolve } from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 // @ts-ignore
@@ -105,11 +104,7 @@ const config: webpack.Configuration  =  {
      *
      * @see https://github.com/johnagan/clean-webpack-plugin
      */
-    new CleanWebpackPlugin([
-      "dist",
-      "coverage",
-     ],
-    ),
+    new CleanWebpackPlugin(),
     /**
      * HtmlWebpackPlugin configuration
      *

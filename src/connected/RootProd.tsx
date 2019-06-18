@@ -1,5 +1,5 @@
 import React from "react";
-import CssBaseline from "material-ui/CssBaseline";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "react-router-redux";
