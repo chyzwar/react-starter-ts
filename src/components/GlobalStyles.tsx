@@ -28,14 +28,10 @@ const decorate = withStyles({
   },
 });
 
-interface GlobalStylesProps {
-  children?: React.ReactNode;
-}
-
-const DecoratedClass = decorate<GlobalStylesProps>(
-  class GlobalStyles extends React.Component<GlobalStylesProps & WithStyles<"@global">> {
+const DecoratedClass = decorate(
+  class GlobalStyles extends React.PureComponent<WithStyles<"@global">> {
     public render() {
-      return this.props.children || null;
+      return null;
     }
   },
 );

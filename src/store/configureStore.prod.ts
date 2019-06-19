@@ -1,5 +1,5 @@
 import thunkMiddleware from "redux-thunk";
-import { applyMiddleware, combineReducers, createStore, compose } from "redux";
+import { applyMiddleware, combineReducers, createStore, compose, Store } from "redux";
 
 import loggerMiddleware from "../middleware/loggerMiddleware";
 import routerMiddleware from "../middleware/routerMiddleware";
@@ -25,7 +25,7 @@ const rootReducer = combineReducers<State, Action>({
 
 const enhancers = compose(middlewares);
 
-function configureStore(initialState: DeepPartial<State> = {}) {
+function configureStore(initialState: DeepPartial<State> = {}): Store<State, Action> {
   return createStore(
     rootReducer,
     initialState,

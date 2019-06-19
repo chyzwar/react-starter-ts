@@ -1,5 +1,5 @@
 import thunkMiddleware from "redux-thunk";
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore, Store } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import loggerMiddleware from "../middleware/loggerMiddleware";
@@ -26,7 +26,7 @@ const rootReducer = combineReducers<State, Action>({
 
 const enhancers = composeWithDevTools(middlewares);
 
-function configureStore(initialState: DeepPartial<State> = {}) {
+function configureStore(initialState: DeepPartial<State> = {}): Store<State, Action> {
   return createStore(
     rootReducer,
     initialState,

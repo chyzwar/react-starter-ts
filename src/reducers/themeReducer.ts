@@ -1,7 +1,7 @@
 import BlueTheme from "../constants/BlueTheme";
 import TealTheme from "../constants/TealTheme";
 
-import { Theme } from "material-ui/styles/createMuiTheme";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import { Reducer } from "redux";
 import { ActionTypes } from "../constants/ActionTypes";
 import { Action } from "../types/Action";

@@ -1,13 +1,7 @@
-import { routerReducer, RouterState } from "react-router-redux";
-import { Reducer } from "redux";
-import { Action } from "../types/Action";
+import { connectRouter, LocationChangeAction, RouterState } from "connected-react-router";
+import history from "../constants/History";
+import { Reducer } from "react";
 
-const initialState: RouterState = {
-  location: null,
-};
-
-// tslint:disable-next-line
-const reducer: Reducer<RouterState, Action> = (state = initialState, action) =>
-  routerReducer(state, action);
+const reducer: Reducer<RouterState, LocationChangeAction> = connectRouter(history);
 
 export default reducer;

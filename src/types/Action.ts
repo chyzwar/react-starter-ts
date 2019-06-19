@@ -1,8 +1,8 @@
-import { LocationChangeAction, RouterAction } from "react-router-redux";
+import { LocationChangeAction } from "connected-react-router";
 import { ChangeThemeAction } from "../actions/ThemeActions";
 import { AddTodoAction, EditTodoAction, MarkTodoAction } from "../actions/TodoActions";
 
-export type Action = RouterAction
+export type Action =
     | LocationChangeAction
     | ChangeThemeAction
     | AddTodoAction

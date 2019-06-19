@@ -1,10 +1,10 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import { hot } from "react-hot-loader";
+import { hot } from "react-hot-loader/root";
 import { Provider } from "react-redux";
 import { AppContainer } from "react-hot-loader";
-import { ConnectedRouter } from "react-router-redux";
+import { ConnectedRouter } from "connected-react-router";
 
 import GlobalStyles from "../components/GlobalStyles";
 import AppDrawer from "../components/AppDrawer";
@@ -28,4 +28,4 @@ const Root: React.SFC<RootProps> = ({ store, history }) => (
   </AppContainer>
 );
 
-export default hot(module)(Root);
+export default hot(Root);

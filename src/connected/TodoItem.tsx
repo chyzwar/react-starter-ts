@@ -34,8 +34,4 @@ class TodoItem extends React.PureComponent<TodoItemProps> {
   }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  markTodo: (id: number) => { dispatch(markTodo(id)); },
-});
-
-export default connect(undefined, mapDispatchToProps)(TodoItem);
+export default connect(undefined, {markTodo})(TodoItem);

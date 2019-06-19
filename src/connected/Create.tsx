@@ -5,7 +5,6 @@ import Button from "@material-ui/core/Button/Button";
 import { connect } from "react-redux";
 import { ChangeEvent, FormEvent } from "react";
 import { addTodo } from "../actions/TodoActions";
-import { Dispatch } from "../types/Dispatch";
 
 interface CreateProps{
   addTodo(text: string): void;
@@ -57,10 +56,4 @@ class Create extends React.Component<CreateProps, CreateState> {
   }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  addTodo: (text: string) => {
-    dispatch(addTodo(text));
-  },
-});
-
-export default connect(undefined, mapDispatchToProps)(Create);
+export default connect(undefined, {addTodo})(Create);

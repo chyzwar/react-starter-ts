@@ -41,7 +41,7 @@ interface AppDrawerProps {
 
 type PropsWithStyle = AppDrawerProps & WithStyles<"closeDrawerIcon" | "paperContent" | "toolbarRoot">;
 
-const DecoratedClass = decorate<AppDrawerProps>(
+const DecoratedClass = decorate(
   class AppDrawer extends React.Component<PropsWithStyle, AppDrawerState> {
     public state = {
       open: false,

@@ -2,7 +2,7 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import { Provider } from "react-redux";
-import { ConnectedRouter } from "react-router-redux";
+import { ConnectedRouter } from "connected-react-router";
 
 import GlobalStyles from "../components/GlobalStyles";
 import AppDrawer from "../components/AppDrawer";
