@@ -13,19 +13,21 @@ import Routes from "../components/Routes";
 import ThemeProvider from "./ThemeProvider";
 
 const Root: React.SFC<RootProps> = ({ store, history }) => (
-  <AppContainer>
-    <Provider store={store}>
-      <ThemeProvider>
-        <CssBaseline />
-        <GlobalStyles />
-        <ConnectedRouter history={history}>
-          <AppDrawer>
-            <Routes />
-          </AppDrawer>
-        </ConnectedRouter>
-      </ThemeProvider>
-    </Provider>
-  </AppContainer>
+  <React.StrictMode>
+    <AppContainer>
+      <Provider store={store}>
+        <ThemeProvider>
+          <CssBaseline />
+          <GlobalStyles />
+          <ConnectedRouter history={history}>
+            <AppDrawer>
+              <Routes />
+            </AppDrawer>
+          </ConnectedRouter>
+        </ThemeProvider>
+      </Provider>
+    </AppContainer>
+  </React.StrictMode>
 );
 
 export default hot(Root);

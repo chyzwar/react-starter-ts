@@ -1,6 +1,7 @@
+import Action from "../types/Action";
+
 import { Reducer } from "redux";
 import { ActionTypes } from "../constants/ActionTypes";
-import { Action } from "../types/Action";
 import { Todo } from "../types/Todo";
 
 export type TodosState = Todo[];

@@ -5,7 +5,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 import { connect } from "react-redux";
 import { markTodo } from "../actions/TodoActions";
-import { Dispatch } from "../types/Dispatch";
 import { Todo } from "../types/Todo";
 
 interface TodoItemProps{

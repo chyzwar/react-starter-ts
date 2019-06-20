@@ -1,7 +1,6 @@
-import { connectRouter, LocationChangeAction, RouterState } from "connected-react-router";
 import history from "../constants/History";
-import { Reducer } from "react";
+import { connectRouter } from "connected-react-router";
 
-const reducer: Reducer<RouterState, LocationChangeAction> = connectRouter(history);
+const reducer = connectRouter(history);
 
 export default reducer;

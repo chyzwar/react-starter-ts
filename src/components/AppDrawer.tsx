@@ -72,7 +72,7 @@ const DecoratedClass = decorate(
 
       return (
         <React.Fragment>
-          <AppBar position="static">
+          <AppBar position="static" color="primary">
             <Toolbar classes={{root: toolbarRoot}}>
               <IconButton onClick={this.openDrawer} color="inherit" aria-label="Menu">
                 <MenuIcon />

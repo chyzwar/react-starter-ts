@@ -3,7 +3,7 @@ import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import { connect } from "react-redux";
-import { State } from "../types/State";
+import State from "../types/State";
 
 interface ThemeProviderProps{
   theme: Theme;
